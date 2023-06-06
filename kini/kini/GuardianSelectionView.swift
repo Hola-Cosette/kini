@@ -11,22 +11,25 @@
 import SwiftUI
 
 struct GuardianSelectionView: View {
+    @State var characters = ["character", "character", "character", "character"]
+    @State var characterSelected: Int?
     
     var body: some View {
         VStack(spacing:0) {
             HeaderView()
                 .padding(EdgeInsets(top:97, leading:23, bottom:0, trailing: 23))
                 .ignoresSafeArea()
-            GuardianGridView()
+            GuardianGridView(characters: $characters, characterSelected: $characterSelected)
                 .padding(EdgeInsets(top:29, leading:32, bottom:0, trailing: 32))
             Button("나의 식사 시간에 함께해주세요"){
 
             }
+            .disabled(characterSelected == nil)
             .frame(maxWidth: .infinity, alignment: .center)
             .foregroundColor(.white)
             .bold()
             .padding()
-            .background(Color.gray)
+            .background(characterSelected != nil ? Color.blue : Color.gray)
             .cornerRadius(15)
             .frame(width: 343, height: 50)
 
@@ -59,8 +62,8 @@ struct HeaderView: View {
 }
 
 struct GuardianGridView: View {
-    let characters = ["character", "character", "character", "character"]
-    @State var characterSelected: Int?
+    @Binding var characters: [String]
+    @Binding var characterSelected: Int?
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
