@@ -5,17 +5,19 @@
 //  Created by jaelyung kim on 2023/06/03.
 //
 
+// 1. toggle할 때 다른 캐릭터들 비활성화
+// 2. UserDefault 저장할 때 캐릭터 이미지 네임도 저장
+
 import SwiftUI
 
 struct GuardianSelectionView: View {
-    private var imageNames = ["character"]
     
     var body: some View {
         VStack(spacing:0) {
             HeaderView()
                 .padding(EdgeInsets(top:97, leading:23, bottom:0, trailing: 23))
                 .ignoresSafeArea()
-            GuardianGridView(imageNames: imageNames)
+            GuardianGridView()
                 .padding(EdgeInsets(top:29, leading:32, bottom:0, trailing: 32))
             Button("나의 식사 시간에 함께해주세요"){
 
@@ -39,6 +41,7 @@ struct GuardianSelectionView_Previews: PreviewProvider {
 }
 
 struct HeaderView: View {
+    @State private var isFlagged = false
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
@@ -47,6 +50,7 @@ struct HeaderView: View {
                     .bold()
                 Text("우리 친구의 식사 시간을 함께할 든든한 식사 친구들이 기다리고  있어요. 한 명을 골라보세요.")
                     .padding(.top, 20)
+                .toggleStyle(.button)
             }
             Spacer()
         }
@@ -55,21 +59,23 @@ struct HeaderView: View {
 }
 
 struct GuardianGridView: View {
-    var imageNames: [String]
+    let characters = ["character", "character", "character", "character"]
+    @State var characterSelected: Int?
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         HStack {
             ScrollView {
                 LazyVGrid(columns: gridItemLayout, spacing:20) {
-                    ForEach((0...3), id: \.self) {_ in
+                    ForEach(0..<characters.count) { character in
                         Button(action: {
-                            
+                            self.characterSelected = character
                         }){
-                            Image(imageNames[0])
+                            Image(characters[character])
                             
                         }
                         .frame(width:151, height: 195)
+                        .background(self.characterSelected == character ? Color.blue : Color.white)
                         .cornerRadius(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
