@@ -41,11 +41,12 @@ struct GuardianSelectionView_Previews: PreviewProvider {
 struct HeaderView: View {
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 0) {
                 Text("누구와 함께 즐거운 식사시간을 가져볼까요?")
                     .font(.largeTitle)
                     .bold()
                 Text("우리 친구의 식사 시간을 함께할 든든한 식사 친구들이 기다리고  있어요. 한 명을 골라보세요.")
+                    .padding(.top, 20)
             }
             Spacer()
         }
