@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct FoodCheckView: View {
     // Variable List
@@ -19,9 +20,18 @@ struct FoodCheckView: View {
     let colorNavy = Color(red: 34/255, green: 49/255, blue: 116/255)    // Font, Frame Color
     let colorLightGray = Color(red: 249/255, green: 249/255, blue: 249/255) // Star Score
     let colorGray = Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 60/100)    // Nutrition Type Text
+    let colorBlur = Color(red: 47/255, green: 47/255, blue: 47/255, opacity: 30/100)
     let colorShadow = Color(red: 153/255, green: 123/255, blue: 52/255, opacity: 40/100)    // Shadow Color
     let colorPre = Color(red: 251/255, green: 227/255, blue: 170/255)
     let colorPro = Color(red: 251/255, green: 192/255, blue: 54/255)
+    
+    // MARK: for ReportView
+    var nutrition1: [String] = ["탄수화물", "단백질", "지방"]
+    var nutrition2: [String] = ["당", "열량", "콜레스테롤"]
+    @State var shouldShowPopup : Bool = false   // Popup 여부
+    var reportView = ReportView()
+    // ~MARK
+    
     var body: some View {
         ZStack {    // Navigation Button - (Photo - Menu)
             colorBackground.ignoresSafeArea()
@@ -45,8 +55,8 @@ struct FoodCheckView: View {
                     Spacer().frame(width: 13)   // 버튼 사이 여백
 
                     // 버튼 '점수를 알려주세요'
-                    Button(action: {    // action
-
+                    Button(action: {    // action    // Popup Button
+                        self.shouldShowPopup = true
                     }) {    // label
                         RoundedRectangle(cornerRadius: 15)
                             .frame(width: 170, height: 50)
@@ -57,8 +67,7 @@ struct FoodCheckView: View {
                                     .foregroundColor(colorNavy)
                                     .font(.system(size: 17, weight: .semibold))
                             }
-                    }
-
+                    }   // ~label
                 }   // ~HStack
                 .padding(.top, 748)
                 .padding(.bottom, 46)
@@ -116,6 +125,17 @@ struct FoodCheckView: View {
                 
                 
             }   // ~VStack
+            
+            .popup(isPresented: $shouldShowPopup) {
+                colorBlur
+                    .blur(radius: 2)
+                    .animation(.easeInOut)
+                    .ignoresSafeArea()
+                reportView  // popup
+            } customize: {
+                $0
+                    .backgroundColor(Color(red: 97/255, green: 97/255, blue: 97/255, opacity: 0.9))
+            }
         }   // ~ZStack
         .ignoresSafeArea()
     }   // ~body
