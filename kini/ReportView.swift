@@ -9,124 +9,134 @@ import SwiftUI
 import PopupView
 
 struct ReportView: View {
+    
+    // Color Extension List
+    let colorBackground = Color(red: 255/255, green: 246/255, blue: 231/255)
+    let colorNavy = Color(red: 34/255, green: 49/255, blue: 116/255)    // Font, Frame Color
+    let colorLightPumpkin = Color(red: 255/255, green: 246/255, blue: 231/255)
+    let colorLightGray = Color(red: 249/255, green: 249/255, blue: 249/255) // Star Score
+    let colorGray = Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 60/100)    // Nutrition Type Text
+    let colorShadow = Color(red: 153/255, green: 123/255, blue: 52/255, opacity: 40/100)    // Shadow Color
+    let colorBlur = Color(red: 47/255, green: 47/255, blue: 47/255, opacity: 30/100)
+    let colorPre = Color(red: 251/255, green: 227/255, blue: 170/255)
+    let colorPro = Color(red: 251/255, green: 192/255, blue: 54/255)
+    
+    // MARK: for ReportView
     var nutrition1: [String] = ["탄수화물", "단백질", "지방"]
-    var nutrition2: [String] = ["칼로리", "나트륨", "콜레스테롤"]
+    var nutrition2: [String] = ["당", "열량", "콜레스테롤"]
+    
+    var grade: String = "훌륭해요!"  // !Sample"
     
     @State var shouldShowPopup : Bool = false   // Popup 여부
     
     var body: some View {
             ZStack {
-                Button(action: {    // Popup Button
-                    self.shouldShowPopup = true
-                }, label: {
-                    Text("팝업")
-                        .font(.system(size: 25))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.blue)
-                        .padding()
-                        .background(Color("8227b0"))
-                        .cornerRadius(10)
-                })
-                .popup(isPresented: $shouldShowPopup) {
-                    Rectangle()  // Popup
-                        .stroke(.gray, lineWidth: 1)
-                        .background(.white)
-                        .cornerRadius(20)
-                        .frame(width: 364, height: 418)
-                        .overlay {
-                            VStack(spacing: 0) {    // Button 'X' - Grade - Nutrition - Navigation Button
-                                Image(systemName: "xmark")  // Button 'X'
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 16)
-                                    .padding(EdgeInsets(top: 28, leading: 322, bottom: 4, trailing: 26))
+//                // for UI check
+//                colorBlur
+//                    .blur(radius: 2)
+//                    .animation(.easeInOut, value: 0.5)
+//                    .ignoresSafeArea()
+                
+                Rectangle()  // Popup
+                    .cornerRadius(15)
+                    .frame(width: 350, height: 418)
+                    .foregroundColor(.white)
+                    .overlay {
+                        VStack(spacing: 0) {    //Grade - Nutrition - Navigation Button
+                            Text(grade)   // Grade
+                                .font(.system(size: 28))
+                                .foregroundColor(colorNavy)
+                                .padding(.top, 55)
 
-                                Text("훌륭해요!")   // Grade
-                                    .font(.system(size: 20))
-                                    .lineSpacing(41)
-
-                                Spacer().frame(height: 19)
-
-                                HStack(spacing: 0) {    // Nutrition 1/2
-                                    ForEach(nutrition1, id: \.self) { nutrition in   // nutrition1
-                                        RoundedRectangle(cornerRadius: 15)  //  // Nutrition Frame
-                                            .frame(width: 91, height: 91)
-                                            .foregroundColor(.gray)
-                                            .padding(.horizontal, 5)
-                                            .overlay {
-                                                VStack(spacing: 0) {
-                                                    Image(systemName: "xmark")  // Nutrition Image
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(width: 55, height: 57)
-                                                        .cornerRadius(13)
-                                                    Text(nutrition) // Nutrition Title
-                                                        .font(.system(size: 12))
-                                                        .lineSpacing(41)
-                                                }   // ~VStack
-                                            }   // ~overlay
-                                    }   // ~ForEach
-                                }   // ~HStack
-
-                                Spacer().frame(height: 12)
-
-                                HStack(spacing: 0) {    // Nutrition 2/2
-                                    ForEach(nutrition1, id: \.self) { nutrition in   // nutrition2
-                                        RoundedRectangle(cornerRadius: 15)  //  // Nutrition Frame
-                                            .frame(width: 91, height: 91)
-                                            .foregroundColor(.gray)
-                                            .padding(.horizontal, 5)
-                                            .overlay {
-                                                VStack(spacing: 0) {
-                                                    Image(systemName: "xmark")  // Nutrition Image
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(width: 55, height: 57)
-                                                        .cornerRadius(13)
-                                                    Text(nutrition) // Nutrition Title
-                                                        .font(.system(size: 12))
-                                                        .lineSpacing(41)
-                                                }   // ~VStack
-                                            }   // ~overlay
-                                    }   // ~ForEach
-                                }   // ~HStack
-
-                                Spacer().frame(height: 37)
-
-                                Button(action: {    // action
-
-                                }) {    // label
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .frame(width: 324, height: 50)
+                            HStack(spacing: 0) {    // Nutrition 1/2
+                                ForEach(nutrition1, id: \.self) { nutrition in   // nutrition1
+                                    RoundedRectangle(cornerRadius: 10)  //  // Nutrition Frame
+                                        .frame(width: 102.37, height: 107.99)
+                                        .foregroundColor(colorLightPumpkin)
+                                        .padding(.horizontal, 5)
                                         .overlay {
-                                            Text("식사친구 끼니의 메세지가 도착했어요")
-                                                .foregroundColor(.white)
-                                        }
-                                }
-                                .padding(.bottom, 29)
-                            }   // ~VStack
-                        }
+                                            VStack(spacing: 0) {
+                                                Image(systemName: "face.smiling.inverse")  // Nutrition Image
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .clipShape(Circle())
+                                                    .frame(width: 70, height: 70)
+                                                    .padding(.top, 7)
+                                                
+                                                Text(nutrition) // Nutrition Title
+                                                    .font(.system(size: 12))
+                                                    .foregroundColor(colorNavy)
+                                                    .padding(.top, 10)
+                                                    .padding(.bottom, 6.99)
+                                            }   // ~VStack
+                                        }   // ~overlay
+                                }   // ~ForEach
+                            }   // ~HStack
+                            .padding(.top, 12)
 
-                    // Star
-                    Image(systemName: "star.fill")   // Star1
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 97, height: 97)
-                        .position(x: 59+97/2, y: 207)
-                    Image(systemName: "star")   // Star2
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 97, height: 97)
-                        .position(x: 143+97/2, y: 181)
-                    Image(systemName: "star")   // Star3
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 97, height: 97)
-                        .position(x: 226+97/2, y: 207)
-                } customize: {
-                    $0
-                        .backgroundColor(Color(red: 97/255, green: 97/255, blue: 97/255, opacity: 0.9))
-                }
+                            HStack(spacing: 0) {    // Nutrition 2/2
+                                ForEach(nutrition1, id: \.self) { nutrition in   // nutrition2
+                                    RoundedRectangle(cornerRadius: 10)  //  // Nutrition Frame
+                                        .frame(width: 102.37, height: 107.99)
+                                        .foregroundColor(colorLightPumpkin)
+                                        .padding(.horizontal, 5)
+                                        .overlay {
+                                            VStack(spacing: 0) {
+                                                Image(systemName: "face.smiling.inverse")  // Nutrition Image
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .clipShape(Circle())
+                                                    .frame(width: 70, height: 70)
+                                                    .padding(.top, 7)
+                                                
+                                                Text(nutrition) // Nutrition Title
+                                                    .font(.system(size: 12))
+                                                    .foregroundColor(colorNavy)
+                                                    .padding(.top, 10)
+                                                    .padding(.bottom, 6.99)
+                                            }   // ~VStack
+                                        }   // ~overlay
+                                }   // ~ForEach
+                            }   // ~HStack
+                            .padding(.top, 7.01)
+
+                            // Navigation Button -> 4.1 FeedBackView
+                            Button(action: {    // action
+
+                            }) {    // label
+                                RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(colorPro)
+                                    .shadow(color: colorShadow,radius: 4, x: 0, y: 2)
+                                    .frame(width: 322, height: 46)
+                                    .overlay {
+                                        Text("식사친구 끼니의 메세지가 도착했어요")
+                                            .foregroundColor(.white)
+                                    }
+                                    .padding(.top, 28.01)
+                                    .padding(.bottom, 19)
+                            }
+                            .padding(.top, 7.01)
+                        }   // ~VStack
+                    }
+                    .padding(.top, 253)
+                    .padding(.bottom, 173)
+
+                // Star
+                Image(systemName: "star.fill")   // Star1
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 89, height: 86)
+                    .padding(EdgeInsets(top: 220, leading: 68, bottom: 538, trailing: 233))
+                Image(systemName: "star.fill")   // Star2
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 89, height: 86)
+                    .padding(EdgeInsets(top: 187, leading: 153, bottom: 571, trailing: 148))
+                Image(systemName: "star")   // Star3
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 89, height: 86)
+                    .padding(EdgeInsets(top: 220, leading: 238, bottom: 538, trailing: 63))
                 
                 
             }   // ~ZStack
