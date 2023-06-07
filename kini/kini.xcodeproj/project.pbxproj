@@ -12,6 +12,9 @@
 		7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0962A271EBA00AF6E8A /* ContentView.swift */; };
 		7D21D0992A271EBB00AF6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D0982A271EBB00AF6E8A /* Assets.xcassets */; };
 		7D21D09C2A271EBB00AF6E8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D09B2A271EBB00AF6E8A /* Preview Assets.xcassets */; };
+		7D8050302A2B3B94006B85D7 /* GuardianSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */; };
+		7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */; };
+		7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8050512A2D7A52006B85D7 /* CheckInView.swift */; };
 		8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */; };
 		8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBE7582A301A5B00BD2107 /* ReportView.swift */; };
 		8ECBE75C2A301A7E00BD2107 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECBE75B2A301A7E00BD2107 /* PopupView */; };
@@ -23,6 +26,9 @@
 		7D21D0962A271EBA00AF6E8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D21D0982A271EBB00AF6E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D21D09B2A271EBB00AF6E8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianSelectionView.swift; sourceTree = "<group>"; };
+		7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		7D8050512A2D7A52006B85D7 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCheckView.swift; sourceTree = "<group>"; };
 		8ECBE7582A301A5B00BD2107 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		99B3605496339A1715C3BB35 /* Pods-kini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kini.release.xcconfig"; path = "Target Support Files/Pods-kini/Pods-kini.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +70,9 @@
 		7D21D0932A271EBA00AF6E8A /* kini */ = {
 			isa = PBXGroup;
 			children = (
+				7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */,
+				7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */,
+				7D8050512A2D7A52006B85D7 /* CheckInView.swift */,
 				7D21D0942A271EBA00AF6E8A /* kiniApp.swift */,
 				7D21D0962A271EBA00AF6E8A /* ContentView.swift */,
 				7D21D0982A271EBB00AF6E8A /* Assets.xcassets */,
@@ -219,6 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D8050302A2B3B94006B85D7 /* GuardianSelectionView.swift in Sources */,
+				7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */,
+				7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */,
 				7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
 				8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */,
