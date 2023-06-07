@@ -145,14 +145,16 @@ struct InputAgeView: View {
 //                    ForEach(8...19, id: \.self) { number in
 //                        Text("\(number)")
 //                            .rotationEffect(Angle(degrees: -270))
+//
 //                    }
 //                }
 //                .pickerStyle(.wheel)
 //                .rotationEffect(Angle(degrees: -90))
-//                .frame(maxHeight: 100)
+//                .frame(maxWidth:.infinity, maxHeight: 68)
 //                .clipped()
-                HorizontalNumberPicker()
-                    .frame(height:30)
+//                HorizontalNumberPicker()
+//                    .frame(height:30)
+                GeometryReaderStudy()
             }
             Spacer()
         }
@@ -174,5 +176,32 @@ struct HorizontalNumberPicker: View {
             .frame(maxHeight: .infinity)
         }
         Spacer()
+    }
+}
+
+struct GeometryReaderStudy: View {
+    @State private var number: Int = 1
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(8..<20 , id: \.self) { number in
+                    GeometryReader { geometry in
+                        Text("\(number)")
+                            .font(.system(size: 40))
+                            .bold()
+                    }
+                    .frame(width: 68, height: 68)
+                }
+            }
+        }
+    }
+    func getPercentage(geo: GeometryProxy) -> Double {
+        // 화면의 중앙 위치
+        let maxDistance = UIScreen.main.bounds.width / 2
+        // 화면 전체 영역 기준 카드의 현재 중앙 좌표
+        let currentX = geo.frame(in: .global).midX
+        // 두 위치에 대한 비율 계산
+        return Double(1 - (currentX / maxDistance))
     }
 }
