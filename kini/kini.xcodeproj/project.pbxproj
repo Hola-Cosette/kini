@@ -11,7 +11,12 @@
 		7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0962A271EBA00AF6E8A /* ContentView.swift */; };
 		7D21D0992A271EBB00AF6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D0982A271EBB00AF6E8A /* Assets.xcassets */; };
 		7D21D09C2A271EBB00AF6E8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D09B2A271EBB00AF6E8A /* Preview Assets.xcassets */; };
-		8E9A00BD2A2BAC5D0051AA6C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9A00BC2A2BAC5D0051AA6C /* HistoryView.swift */; };
+		7D8050302A2B3B94006B85D7 /* GuardianSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */; };
+		7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */; };
+		7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8050512A2D7A52006B85D7 /* CheckInView.swift */; };
+		8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */; };
+		8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBE7582A301A5B00BD2107 /* ReportView.swift */; };
+		8ECBE75C2A301A7E00BD2107 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECBE75B2A301A7E00BD2107 /* PopupView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +25,11 @@
 		7D21D0962A271EBA00AF6E8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D21D0982A271EBB00AF6E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D21D09B2A271EBB00AF6E8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8E9A00BC2A2BAC5D0051AA6C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianSelectionView.swift; sourceTree = "<group>"; };
+		7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		7D8050512A2D7A52006B85D7 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCheckView.swift; sourceTree = "<group>"; };
+		8ECBE7582A301A5B00BD2107 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ECBE75C2A301A7E00BD2107 /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +63,14 @@
 		7D21D0932A271EBA00AF6E8A /* kini */ = {
 			isa = PBXGroup;
 			children = (
+				7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */,
+				7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */,
+				7D8050512A2D7A52006B85D7 /* CheckInView.swift */,
 				7D21D0942A271EBA00AF6E8A /* kiniApp.swift */,
 				7D21D0962A271EBA00AF6E8A /* ContentView.swift */,
 				7D21D0982A271EBB00AF6E8A /* Assets.xcassets */,
+				8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */,
+				8ECBE7582A301A5B00BD2107 /* ReportView.swift */,
 				7D21D09A2A271EBB00AF6E8A /* Preview Content */,
 				8E9A00BC2A2BAC5D0051AA6C /* HistoryView.swift */,
 			);
@@ -86,6 +101,9 @@
 			dependencies = (
 			);
 			name = kini;
+			packageProductDependencies = (
+				8ECBE75B2A301A7E00BD2107 /* PopupView */,
+			);
 			productName = kini;
 			productReference = 7D21D0912A271EBA00AF6E8A /* kini.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 7D21D0882A271EBA00AF6E8A;
+			packageReferences = (
+				8ECBE75A2A301A7E00BD2107 /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 7D21D0922A271EBA00AF6E8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,9 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D8050302A2B3B94006B85D7 /* GuardianSelectionView.swift in Sources */,
+				7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */,
+				7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */,
 				7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */,
 				8E9A00BD2A2BAC5D0051AA6C /* HistoryView.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
+				8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */,
+				8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +300,7 @@
 				DEVELOPMENT_TEAM = 3XBN996KK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -306,6 +333,7 @@
 				DEVELOPMENT_TEAM = 3XBN996KK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -349,6 +377,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8ECBE75A2A301A7E00BD2107 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8ECBE75B2A301A7E00BD2107 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ECBE75A2A301A7E00BD2107 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D21D0892A271EBA00AF6E8A /* Project object */;
 }
