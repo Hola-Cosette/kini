@@ -72,6 +72,7 @@
 				8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */,
 				8ECBE7582A301A5B00BD2107 /* ReportView.swift */,
 				7D21D09A2A271EBB00AF6E8A /* Preview Content */,
+				8E9A00BC2A2BAC5D0051AA6C /* HistoryView.swift */,
 			);
 			path = kini;
 			sourceTree = "<group>";
@@ -164,6 +165,7 @@
 				7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */,
 				7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */,
 				7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */,
+				8E9A00BD2A2BAC5D0051AA6C /* HistoryView.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
 				8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */,
 				8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */,
