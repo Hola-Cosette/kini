@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		267AE7716EEA107F49354659 /* Pods_kini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99C4DCCC95E9597E67C9AFF /* Pods_kini.framework */; };
 		7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0942A271EBA00AF6E8A /* kiniApp.swift */; };
 		7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0962A271EBA00AF6E8A /* ContentView.swift */; };
 		7D21D0992A271EBB00AF6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D0982A271EBB00AF6E8A /* Assets.xcassets */; };
@@ -31,9 +30,6 @@
 		7D8050512A2D7A52006B85D7 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCheckView.swift; sourceTree = "<group>"; };
 		8ECBE7582A301A5B00BD2107 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
-		99B3605496339A1715C3BB35 /* Pods-kini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kini.release.xcconfig"; path = "Target Support Files/Pods-kini/Pods-kini.release.xcconfig"; sourceTree = "<group>"; };
-		ABFC9B450BC11C7F421FFEBB /* Pods-kini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kini.debug.xcconfig"; path = "Target Support Files/Pods-kini/Pods-kini.debug.xcconfig"; sourceTree = "<group>"; };
-		B99C4DCCC95E9597E67C9AFF /* Pods_kini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +38,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECBE75C2A301A7E00BD2107 /* PopupView in Frameworks */,
-				267AE7716EEA107F49354659 /* Pods_kini.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +47,8 @@
 		7D21D0882A271EBA00AF6E8A = {
 			isa = PBXGroup;
 			children = (
-				8ED6279C2A2B8B6E00810471 /* ReportView.swift */,
 				7D21D0932A271EBA00AF6E8A /* kini */,
 				7D21D0922A271EBA00AF6E8A /* Products */,
-				BB1D566A834B660E8163164A /* Pods */,
-				C978D1B054738657EFFDF2D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,23 +84,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BB1D566A834B660E8163164A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				ABFC9B450BC11C7F421FFEBB /* Pods-kini.debug.xcconfig */,
-				99B3605496339A1715C3BB35 /* Pods-kini.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		C978D1B054738657EFFDF2D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B99C4DCCC95E9597E67C9AFF /* Pods_kini.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,11 +91,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D21D09F2A271EBB00AF6E8A /* Build configuration list for PBXNativeTarget "kini" */;
 			buildPhases = (
-				FE1D0E1741F7E10018D619EF /* [CP] Check Pods Manifest.lock */,
 				7D21D08D2A271EBA00AF6E8A /* Sources */,
 				7D21D08E2A271EBA00AF6E8A /* Frameworks */,
 				7D21D08F2A271EBA00AF6E8A /* Resources */,
-				BBF6D04BF397C3FD0EC61CFE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,48 +154,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BBF6D04BF397C3FD0EC61CFE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kini/Pods-kini-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kini/Pods-kini-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kini/Pods-kini-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE1D0E1741F7E10018D619EF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kini-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D21D08D2A271EBA00AF6E8A /* Sources */ = {
@@ -358,7 +289,6 @@
 		};
 		7D21D0A02A271EBB00AF6E8A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABFC9B450BC11C7F421FFEBB /* Pods-kini.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -369,8 +299,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -394,7 +322,6 @@
 		};
 		7D21D0A12A271EBB00AF6E8A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99B3605496339A1715C3BB35 /* Pods-kini.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -405,8 +332,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
