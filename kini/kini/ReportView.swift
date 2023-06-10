@@ -25,11 +25,6 @@ struct ReportView: View {
     
     var body: some View {
             ZStack {
-                Color.gray010
-                    .blur(radius: 2)
-                    .animation(.easeInOut, value: 0.5)
-                    .ignoresSafeArea()
-                
                 Rectangle()  // Popup
                     .cornerRadius(15)
                     .frame(width: 350, height: 418)
