@@ -20,6 +20,8 @@
 		8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */; };
 		8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBE7582A301A5B00BD2107 /* ReportView.swift */; };
 		8ECBE75C2A301A7E00BD2107 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECBE75B2A301A7E00BD2107 /* PopupView */; };
+		8ED5AC912A3339AC00714CD8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5AC902A3339AC00714CD8 /* HistoryView.swift */; };
+		8EF007D72A3335FF007BA1B3 /* FeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF007D62A3335FF007BA1B3 /* FeedBackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCheckView.swift; sourceTree = "<group>"; };
 		8ECBE7582A301A5B00BD2107 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		8ED5AC902A3339AC00714CD8 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		8EF007D62A3335FF007BA1B3 /* FeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +78,11 @@
 				7D8050512A2D7A52006B85D7 /* CheckInView.swift */,
 				7D21D0942A271EBA00AF6E8A /* kiniApp.swift */,
 				7D21D0962A271EBA00AF6E8A /* ContentView.swift */,
+				8EF007D62A3335FF007BA1B3 /* FeedBackView.swift */,
 				7D21D0982A271EBB00AF6E8A /* Assets.xcassets */,
 				8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */,
 				8ECBE7582A301A5B00BD2107 /* ReportView.swift */,
+				8ED5AC902A3339AC00714CD8 /* HistoryView.swift */,
 				7D21D09A2A271EBB00AF6E8A /* Preview Content */,
 				7DDA6D892A331A4A00DFCCB1 /* Color.xcassets */,
 				7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */,
@@ -177,7 +183,9 @@
 				7DDA6D8C2A336A3000DFCCB1 /* ColorExtension.swift in Sources */,
 				7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
+				8EF007D72A3335FF007BA1B3 /* FeedBackView.swift in Sources */,
 				8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */,
+				8ED5AC912A3339AC00714CD8 /* HistoryView.swift in Sources */,
 				8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
