@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "grape_02.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "grape_02.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
