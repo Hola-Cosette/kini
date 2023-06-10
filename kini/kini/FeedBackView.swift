@@ -17,7 +17,7 @@ struct FeedBackView: View {
     let colorBlur = Color(red: 47/255, green: 47/255, blue: 47/255, opacity: 30/100)
     let colorShadow = Color(red: 153/255, green: 123/255, blue: 52/255, opacity: 40/100)    // Shadow Color
     
-    var selectedCharacter = "face.smiling"  // 선택한 캐릭터 이미지
+    var selectedCharacter = "gardian_carrot"  // 선택한 캐릭터 이미지
     
     let messageGood: [String] = ["오늘도 (Time)을 잘 챙겨 먹었구나,\n(Username).\n끼니를 거르지 않고 꼭꼭 챙겨먹다니\n정말 칭찬해!",
                              "특히 오늘 (time)에 먹은 음식은\n영양가가 정말 높고 훌륭했단다. ",
@@ -171,11 +171,11 @@ struct CharacterThumbnail: View {
                 .foregroundColor(Color.yellow020)
                 .frame(width: thumbnailWidth, height: thumbnailHeight)
                 .overlay {
-                Image(systemName: characterThumbnail)   //   !Sample!
+                Image(characterThumbnail)   //   !Sample!
                     .resizable()
                     .scaledToFit()
-                    .clipShape(Circle())
                     .frame(width: thumbnailWidth, height: thumbnailHeight)
+                    .clipShape(Circle())
             }
         }
     }
