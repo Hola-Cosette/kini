@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "gardian_broccoli_disabled.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "gardian_broccoli_disabled.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
