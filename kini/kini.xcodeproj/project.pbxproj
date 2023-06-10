@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D0244D02A345F06008BD5CA /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */; };
+		7D0244D42A348B56008BD5CA /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0244D32A348B56008BD5CA /* TextModifier.swift */; };
 		7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0942A271EBA00AF6E8A /* kiniApp.swift */; };
 		7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0962A271EBA00AF6E8A /* ContentView.swift */; };
 		7D21D0992A271EBB00AF6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D0982A271EBB00AF6E8A /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
+		7D0244D32A348B56008BD5CA /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		7D21D0912A271EBA00AF6E8A /* kini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D21D0942A271EBA00AF6E8A /* kiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kiniApp.swift; sourceTree = "<group>"; };
 		7D21D0962A271EBA00AF6E8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				7DDA6D892A331A4A00DFCCB1 /* Color.xcassets */,
 				7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */,
 				7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */,
+				7D0244D32A348B56008BD5CA /* TextModifier.swift */,
 			);
 			path = kini;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D8050302A2B3B94006B85D7 /* GuardianSelectionView.swift in Sources */,
+				7D0244D42A348B56008BD5CA /* TextModifier.swift in Sources */,
 				7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */,
 				7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */,
 				7D0244D02A345F06008BD5CA /* ButtonModifier.swift in Sources */,
