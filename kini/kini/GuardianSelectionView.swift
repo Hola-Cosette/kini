@@ -11,15 +11,16 @@
 import SwiftUI
 
 struct GuardianSelectionView: View {
-    @State var characters = ["character", "character", "character", "character"]
+    @State var characters = ["gardian_carrot", "gardian_broccoli", "gardian_eggplant", "gardian_paprika"]
+    @State var characters_disabled = ["gardian_carrot_disabled", "gardian_broccoli_disabled", "gardian_eggplant_disabled", "gardian_paprika_disabled"]
     @State var characterSelected: Int?
     
     var body: some View {
         VStack(spacing:0) {
             HeaderView()
-                .padding(EdgeInsets(top:97, leading:23, bottom:0, trailing: 23))
+                .padding(EdgeInsets(top:97, leading:20, bottom:0, trailing: 23))
                 .ignoresSafeArea()
-            GuardianGridView(characters: $characters, characterSelected: $characterSelected)
+            GuardianGridView(characters: $characters, characters_disabled: $characters_disabled, characterSelected: $characterSelected)
                 .padding(EdgeInsets(top:29, leading:32, bottom:0, trailing: 32))
             Button("나의 식사 시간에 함께해주세요"){
 
@@ -49,11 +50,10 @@ struct HeaderView: View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
                 Text("누구와 함께 즐거운 식사시간을 가져볼까요?")
-                    .font(.largeTitle)
-                    .bold()
-                Text("우리 친구의 식사 시간을 함께할 든든한 식사 친구들이 기다리고  있어요. 한 명을 골라보세요.")
+                    .modifier(XXXLBoldNavyTextModifier())
+                Text("우리 친구의 식사 시간을 함께 할 \n든든한 식사 친구들이 기다리고 있어요. \n한 명을 골라보세요.")
+                    .modifier(LSemiboldNavyTextModifier())
                     .padding(.top, 20)
-                .toggleStyle(.button)
             }
             Spacer()
         }
@@ -63,6 +63,7 @@ struct HeaderView: View {
 
 struct GuardianGridView: View {
     @Binding var characters: [String]
+    @Binding var characters_disabled: [String]
     @Binding var characterSelected: Int?
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -74,16 +75,9 @@ struct GuardianGridView: View {
                         Button(action: {
                             self.characterSelected = character
                         }){
-                            Image(characters[character])
-                            
+                            Image(characters_disabled[character])
                         }
-                        .frame(width:151, height: 195)
-                        .background(self.characterSelected == character ? Color.blue : Color.white)
-                        .cornerRadius(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.black, lineWidth: 1)
-                        )
+                        .modifier(Select2GridButtonDisabledModifier())
                     }
                 }
             }
