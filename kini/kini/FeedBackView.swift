@@ -19,6 +19,7 @@ struct FeedBackView: View {
     
     var selectedCharacter = "gardian_carrot"  // 선택한 캐릭터 이미지
     
+    @State private var message: [String] = ["", "", "", "", ""]
     let messageGood: [String] = ["오늘도 (Time)을 잘 챙겨 먹었구나,\n(Username).\n끼니를 거르지 않고 꼭꼭 챙겨먹다니\n정말 칭찬해!",
                              "특히 오늘 (time)에 먹은 음식은\n영양가가 정말 높고 훌륭했단다. ",
                              "우와 정말요?",
@@ -83,9 +84,23 @@ struct FeedBackView: View {
                             .padding(.leading, 21)
                         
                         VStack(alignment: .leading, spacing: 5) {    // 같은 사람 대화 // spacing 5
-                            ChatLogKini(message: messageGood[0])
+                            ChatLogKini(message: message[0], messageFeedBack: messageGood[0])
+                                .onAppear {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                                        message[0] = "․  ·  ․"
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        message[0] = "·  ․  ·"
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                        message[0] = "․  ·  ․"
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                        message[0] = messageGood[0]
+                                    }
+                                }
                             if count >= 2 {
-                                ChatLogKini(message: messageGood[1])
+                                ChatLogKini(message: message[1], messageFeedBack: messageGood[1])
                                 
                             }
                         }
@@ -99,7 +114,7 @@ struct FeedBackView: View {
                         Spacer()
                         
                         VStack(alignment: .trailing, spacing: 5) {    // 같은 사람 대화 // spacing 5
-                            ChatLogUser(message: messageGood[2])
+                            ChatLogUser(message: message[2], messageFeedBack: messageGood[2])
                         }
                         .padding(.trailing, 20)
                     }   // ~HStack(Chat 3/5)
@@ -111,7 +126,7 @@ struct FeedBackView: View {
                             .padding(.leading, 21)
                         
                         VStack(alignment: .leading, spacing: 5) {    // 같은 사람 대화 // spacing 5
-                            ChatLogKini(message: messageGood[3])
+                            ChatLogKini(message: message[3], messageFeedBack: messageGood[3])
                         }
                         Spacer()
                     }   // ~HStack(Chat 4/5)
@@ -123,7 +138,7 @@ struct FeedBackView: View {
                         Spacer()
                         
                         VStack(alignment: .trailing, spacing: 5) {    // 같은 사람 대화 // spacing 5
-                            ChatLogUser(message: messageGood[4])
+                            ChatLogUser(message: message[4], messageFeedBack: messageGood[4])
                         }
                         .padding(.trailing, 20)
                     }   // ~HStack(Chat 3/5)
@@ -142,6 +157,7 @@ struct FeedBackView: View {
                 } else {
                     count += 1  // 다음 채팅이 나오도록
                 }
+                self.message = ["", "", "", "", ""] // 출력 대화창 초기화
             }
             .modifier(LongButtonAbledModifier())
             .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
@@ -182,7 +198,8 @@ struct CharacterThumbnail: View {
 }
 
 struct ChatLogKini: View {
-    let message: String
+    @State var message: String
+    let messageFeedBack: String
     
     var body: some View {
         VStack {
@@ -201,12 +218,45 @@ struct ChatLogKini: View {
                         .frame(maxWidth: 270)
                         .frame(maxHeight: 80)
                 }
+                .onAppear { // 작성중 효과
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                        message = "․  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        message = "·  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        message = "․  ·  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        message = "․  ․  ·"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        message = "․  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        message = "·  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                        message = "․  ·  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                        message = "․  ․  ·"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                        message = "․  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        message = messageFeedBack
+                    }
+                }   // ~onAppear(작성중 효과)
         }
     }
 }
 
 struct ChatLogUser: View {
-    let message: String
+    @State var message: String
+    let messageFeedBack: String
     
     var body: some View {
         VStack {
@@ -225,6 +275,38 @@ struct ChatLogUser: View {
                         .frame(maxWidth: 270)
                         .frame(maxHeight: 80)
                 }
+                .onAppear { // 작성중 효과
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                        message = "․  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        message = "·  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        message = "․  ·  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        message = "․  ․  ·"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        message = "․  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        message = "·  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                        message = "․  ·  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                        message = "․  ․  ·"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                        message = "․  ․  ․"
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        message = messageFeedBack
+                    }
+                }   // ~onAppear(작성중 효과)
         }
     }
 }
