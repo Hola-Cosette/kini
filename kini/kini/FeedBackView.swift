@@ -10,16 +10,12 @@ import SwiftUI
 struct FeedBackView: View {
     
     // Color Extension List
-    let colorBackground = Color(red: 255/255, green: 246/255, blue: 231/255)
-    let colorNavy = Color(red: 34/255, green: 49/255, blue: 116/255)    // Font, Frame Color
     let colorLightGray = Color(red: 249/255, green: 249/255, blue: 249/255) // Star Score
     let colorBorder = Color(red: 192/255, green: 192/255, blue: 192/255)    // NavigationBar Border
     let colorTextGray = Color(red: 130/255, green: 130/255, blue: 130/255, opacity: 85/100)
     let colorGray = Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 60/100)    // Nutrition Type Text
     let colorBlur = Color(red: 47/255, green: 47/255, blue: 47/255, opacity: 30/100)
     let colorShadow = Color(red: 153/255, green: 123/255, blue: 52/255, opacity: 40/100)    // Shadow Color
-    let colorPre = Color(red: 251/255, green: 227/255, blue: 170/255)
-    let colorPro = Color(red: 251/255, green: 192/255, blue: 54/255)
     
     var selectedCharacter = "face.smiling"  // 선택한 캐릭터 이미지
     
@@ -41,7 +37,7 @@ struct FeedBackView: View {
     
     var body: some View {
         ZStack {    // NavigationBar - ChatLog - NavigationButtion
-            colorBackground
+            Color.yellow010
                 .ignoresSafeArea()
             
             // MARK: NavigationBar
@@ -54,7 +50,7 @@ struct FeedBackView: View {
                     HStack {
                         Image(systemName: "chevron.left")    // Navigation BackButton
                             .frame(width: 15, height: 23)
-                            .foregroundColor(colorNavy)
+                            .foregroundColor(Color.navy)
 //                                    .padding(EdgeInsets(top: 64, leading: 24, bottom: 757, trailing: 351))
                             .padding(.leading, 24)
                         
@@ -63,7 +59,7 @@ struct FeedBackView: View {
                         
                         VStack(alignment: .leading) {    // CharacterName - CharacterMessage
                             Text("식사 친구 끼니")
-                                .foregroundColor(colorNavy)
+                                .foregroundColor(Color.navy)
                                 .font(.system(size: 16))
                             
                             Text("오늘도 건강하고 든든한 하루!")
@@ -139,26 +135,20 @@ struct FeedBackView: View {
             
             // MARK: NavigationButto
             // 버튼 '다음'
-            Button(action: {    // action
+            Button(count == 5 ? "끼나와의 대화 마치기" : "다음"){
                 if count == 5 {
                     self.count = 0  // 초기화
                     // Navigation
                 } else {
                     count += 1  // 다음 채팅이 나오도록
                 }
-            }) {    // label
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(width: 350, height: 50)
-                    .foregroundColor(colorPro)
-                    .shadow(color: colorShadow,radius: 6, x: 0, y: 4)
-                    .overlay {
-                        Text(count == 5 ? "끼나와의 대화 마치기" : "다음")
-                            .foregroundColor(colorNavy)
-                            .font(.system(size: 17, weight: .semibold))
-                    }
             }
+            .modifier(LongButtonAbledModifier())
+            .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
             .padding(.top, 748)
             .padding(.bottom, 46)
+            
+            
         }
         .ignoresSafeArea()
     }
@@ -171,7 +161,6 @@ struct FeedBackView_Previews: PreviewProvider {
 }
 
 struct CharacterThumbnail: View {
-    let colorPre = Color(red: 251/255, green: 227/255, blue: 170/255)
     let characterThumbnail: String    // 캐릭터 사진 이릅
     let thumbnailWidth: Double
     let thumbnailHeight: Double
@@ -179,7 +168,7 @@ struct CharacterThumbnail: View {
     var body: some View {
         VStack {
             Circle()
-                .foregroundColor(colorPre)
+                .foregroundColor(Color.yellow020)
                 .frame(width: thumbnailWidth, height: thumbnailHeight)
                 .overlay {
                 Image(systemName: characterThumbnail)   //   !Sample!
@@ -193,8 +182,6 @@ struct CharacterThumbnail: View {
 }
 
 struct ChatLogKini: View {
-    let colorNavy = Color(red: 34/255, green: 49/255, blue: 116/255)    // Font, Frame Color
-    let colorPro = Color(red: 251/255, green: 192/255, blue: 54/255)
     let message: String
     
     var body: some View {
@@ -202,13 +189,13 @@ struct ChatLogKini: View {
             Text(message)
                 .multilineTextAlignment(.leading)
                 .font(.system(size: 12))
-                .foregroundColor(colorNavy)
+                .foregroundColor(Color.navy)
                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
                 .background(.white)
                 .cornerRadius(15)
                 .overlay {
                     RoundedRectangle(cornerRadius: 15)
-                        .stroke(colorPro, lineWidth: 1)
+                        .stroke(Color.yellow030, lineWidth: 1)
                         .background(.clear)
                         .cornerRadius(15)
                         .frame(maxWidth: 270)
@@ -219,8 +206,6 @@ struct ChatLogKini: View {
 }
 
 struct ChatLogUser: View {
-    let colorNavy = Color(red: 34/255, green: 49/255, blue: 116/255)    // Font, Frame Color
-    let colorPro = Color(red: 251/255, green: 192/255, blue: 54/255)
     let message: String
     
     var body: some View {
@@ -228,13 +213,13 @@ struct ChatLogUser: View {
             Text(message)
                 .multilineTextAlignment(.leading)
                 .font(.system(size: 12))
-                .foregroundColor(colorNavy)
+                .foregroundColor(Color.navy)
                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
-                .background(colorPro)
+                .background(Color.yellow030)
                 .cornerRadius(15)
                 .overlay {
                     RoundedRectangle(cornerRadius: 15)
-                        .stroke(colorPro, lineWidth: 1)
+                        .stroke(Color.yellow030, lineWidth: 1)
                         .background(.clear)
                         .cornerRadius(15)
                         .frame(maxWidth: 270)
