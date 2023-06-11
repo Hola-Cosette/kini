@@ -8,66 +8,77 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    let background = Color.yellow010
+    
     var body: some View {
         ZStack {
-            Image("character")
-                .resizable()
-                .frame(width:223, height:321)
-                .offset(y:-85)
-            VStack {
+            background.ignoresSafeArea()
+            
+            VStack(spacing: 0) {
                 
-                HStack {
-                    ZStack {
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color.white)
-                            .frame(width: 331, height: 196)
-                            .overlay(
-                                
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.black, lineWidth: 1)
-                                    .overlay(
-                                        Text("날 선택해주었구나, 정말 고마워. 난 우리 친구가 건강하고 든든한 식사를 할 수 있도록 도와줄 식사친구 끼니야. 이번엔 너에 대해 알려줄래?")
-                                            .padding(EdgeInsets(top:0, leading:25, bottom:0, trailing: 25))
-                                            .font(.system(size:20))
-                                            .lineSpacing(7.5)
-                                    )
-                        )
-                        
-                        RoundedRectangle(cornerRadius: 100)
-                            .foregroundColor(Color.black)
-                            .frame(width: 128, height: 38)
-                            .overlay(
-                                Text("식사친구 끼니")
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .font(.system(size:15))
-                                    .bold()
-                                            
-                            )
-                            .offset(x:-113, y:-100)
-                    }
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "chevron.left")    // Navigation BackButton
+                        .foregroundColor(Color.navy)
+                        .frame(maxWidth: .infinity, maxHeight: 23, alignment: .leading)
+                        .padding(.leading, 19)
                 }
                 
+                //보호자 선택 뷰에서 선택된 캐릭터로 적용되도록 변경필요
+                Image("gardian_carrot")
+                    .resizable()
+                    .frame(width:225, height:343)
+                
+                Spacer()
+                    .frame(height: 75)
+                
+                SpeechBlockView()
                     
-                Button("저에 대해 알려줄게요"){
+                Button("저에 대해 알려줄게요!"){
 
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .foregroundColor(.white)
-                .bold()
-                .padding()
-                .background(Color.gray)
-                .cornerRadius(15)
-                .frame(width: 343, height: 50)
+                .modifier(LongButtonAbledModifier())
+                .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
+                .padding(.top, 30)
             }
-            .offset(y:150)
         }
+        
     }
 }
 
 struct OnBoardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnBoardingView()
+    }
+}
+
+struct SpeechBlockView: View {
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 0) {
+                RoundedRectangle(cornerRadius: 100)
+                    .foregroundColor(Color.yellow030)
+                    .frame(width: 160, height: 40)
+                    .overlay(
+                        Text("식사 친구 끼니")
+                            .modifier(LSemiboldNavyTextModifier())
+                                    
+                    )
+                    .padding(EdgeInsets(top:0, leading:19, bottom:-20, trailing: 0))
+                    .zIndex(9)
+               
+               RoundedRectangle(cornerRadius: 15)
+                   .foregroundColor(Color.white)
+                   .frame(width: 350, height: 177)
+                   .overlay(
+                        Text("날 선택해주었구나, 정말 고마워! \n난 우리 친구가 건강하고 든든한 식사를 할 수 있도록 도와줄 식사친구 **끼니**야. \n이번엔 너에 대해 알려줄래?")
+                            .modifier(MRegularNavyTextModifier())
+                            .lineSpacing(6.0)
+                            .padding(EdgeInsets(top:0, leading:19, bottom:0, trailing: 20))
+                        , alignment: .leading
+               )
+            }
+        }
     }
 }
