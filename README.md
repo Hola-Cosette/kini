@@ -33,18 +33,18 @@
     <ul>
         <li>하루 세 번 식사 사진으로 간편하게 영양 정보를 기록</li>
         <ul>
-            <li>아이가 일일이 기록하지 않고 식품을 촬영하기만 하면 됨  <code style="color: #ff0000">간편한 사용성</code></li>
+            <li>아이가 일일이 기록하지 않고 식품을 촬영하기만 하면 됨  <strong><code style="color: #ff0000">간편한 사용성</code></strong></li>
         </ul>
-        <li>어렵게 느껴질 수 있는 영양정보와 지식을 게임처럼 점수로 받아보며 친숙해짐 <code style="color: #ff0000">재미와 보람</code></li>
-        <li>대화형으로 친절한 설명과 조언을 받음 <code style="color: #ff0000">관심과 돌봄</code></li>
+        <li>어렵게 느껴질 수 있는 영양정보와 지식을 게임처럼 점수로 받아보며 친숙해짐 <strong><code style="color: #ff0000">재미와 보람</code></strong></li>
+        <li>대화형으로 친절한 설명과 조언을 받음 <strong><code style="color: #ff0000">관심과 돌봄</code></strong></li>
     </ul>
     <li><strong><u>돌봄 공백 채움</u></strong>
     <ul>
-        <li>끼니 기록으로 포도알 스티커를 채워감 <code style="color: #ff0000">재미와 보람</code></li>
+        <li>끼니 기록으로 포도알 스티커를 채워감 <strong><code style="color: #ff0000">재미와 보람</code></strong></li>
         <ul>
             <li>빈 포도알판을 채워가며 보상에 대한 기대를 채워감</li>
         </ul>
-        <li>하루 세 끼 푸시알림을 통해 따뜻한 식사 유도 메세지 전달 <code style="color: #ff0000">관심과 돌봄</code></li>
+        <li>하루 세 끼 푸시알림을 통해 따뜻한 식사 유도 메세지 전달 <strong><code style="color: #ff0000">관심과 돌봄</code></strong></li>
         <ul>
             <li>끼니 때에 먼저 메세지로 나를 챙겨주는 사람이 있다는 따뜻함</li>
         </ul>
@@ -72,8 +72,8 @@
     </ul>
     <li><strong><u>관리자에게 아동의 식습관 및 영양 데이터 제공</u></strong></li>
     <ul>
-        <li>공공데이터로 활용할 수 있는 요소를 갖추기 위한 데이터 수집 <code style="color: #ff0000">스마트한 관리</code></li>
-        <li>매 끼니 영양섭취 데이터가 쌓여 향후 관리자가 이용가능 <code style="color: #ff0000">스마트한 관리</code></li>
+        <li>공공데이터로 활용할 수 있는 요소를 갖추기 위한 데이터 수집 <strong><code style="color: #ff0000">스마트한 관리</code></strong></li>
+        <li>매 끼니 영양섭취 데이터가 쌓여 향후 관리자가 이용가능 <strong><code style="color: #ff0000">스마트한 관리</code></strong></li>
     </ul>
 </ul>
 
@@ -93,7 +93,7 @@
     <img height="24" src="https://img.shields.io/badge/SwiftUI-blue"> 
     <img height="24" src="https://img.shields.io/badge/UIKit-blue"> 
     <img height="24" src="https://img.shields.io/badge/Alamofire-blue"> 
-    <img height="24" src="https://img.shields.io/badge/FoodLens-blue"> <br>
+    <img height="24" src="https://img.shields.io/badge/FoodLensAPI-blue"> <br>
 </div>
 
 <h5>Design</h5>
