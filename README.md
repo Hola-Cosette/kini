@@ -7,16 +7,15 @@
 <h2>🌱 Introduction</h1>
 <p width=300>
     &nbsp&nbsp&nbsp
-    세상을 변화시킬 아이디어로 가슴이 뛰는 다섯 명의 여성 기획자, 디자이너, 개발자가 모인 팀, <code style="color: #00b070; font-weight: bold">"올라 코제트"</code>입니다. 서울에서 생활하며 느낀 일상의 문제에서 더 나아가 사회의 이면에 깊게 자리한 구조적 문제를 이해하고, 파헤치고, 어루만지고, 변화시키고자 함께 뭉쳤습니다.
+    세상을 변화시킬 아이디어로 가슴이 뛰는 다섯 명의 여성 기획자, 디자이너, 개발자가 모인 팀, <strong><code style="color: #00b070">"올라 코제트"</code></strong>입니다. 서울에서 생활하며 느낀 일상의 문제에서 더 나아가 사회의 이면에 깊게 자리한 구조적 문제를 이해하고, 파헤치고, 어루만지고, 변화시키고자 함께 뭉쳤습니다.
     <br><br>
     &nbsp&nbsp&nbsp
-    저희는 <code style="color: #00b070; font-weight: bold">결식우려아동이 지속적인 관심 속에서 건강한 식습관을 형성하도록 돕는 원격 영양돌봄 서비스</code>를 구현하고자 합니다. 사회의 사각지대에서 양질의 식사를 보장받지 못하는 돌봄공백 아동들을 면밀히 관찰하고, 단순히 끼니 해결 차원을 넘어 아동의 건강과 안전을 총괄적으로 지원하는 것을 목표로 삼고 있습니다.
+    저희는 <strong><code style="color: #00b070">결식우려아동이 지속적인 관심 속에서 건강한 식습관을 형성하도록 돕는 원격 영양돌봄 서비스</code></strong>를 구현하고자 합니다. 사회의 사각지대에서 양질의 식사를 보장받지 못하는 돌봄공백 아동들을 면밀히 관찰하고, 단순히 끼니 해결 차원을 넘어 아동의 건강과 안전을 총괄적으로 지원하는 것을 목표로 삼고 있습니다.
     <br>
     <br>
     &nbsp&nbsp&nbsp
-    훌륭한 멘토진과 네트워킹, 교육과정이 있다면 팀의 성장은 물론 새로운 가치를 모두의 눈앞에 구현해내는 일이 어렵지 않을 거라는 확신이 있습니다. 가장 젊고 뜨거운 오늘, 책임감과 기대감을 갖고 <code style="color: #00b070; font-weight: bold">아이와 어른 모두가 건강하고 안전하게 살아갈 수 있는 서울의 지속가능한 미래</code>를 만들어 나가겠습니다.
+    훌륭한 멘토진과 네트워킹, 교육과정이 있다면 팀의 성장은 물론 새로운 가치를 모두의 눈앞에 구현해내는 일이 어렵지 않을 거라는 확신이 있습니다. 가장 젊고 뜨거운 오늘, 책임감과 기대감을 갖고 <strong><code style="color: #00b070">아이와 어른 모두가 건강하고 안전하게 살아갈 수 있는 서울의 지속가능한 미래</code></strong>를 만들어 나가겠습니다.
 </p>
-
 <br>
 <br>
 <br>
@@ -150,7 +149,7 @@
         <td width=150><a href="https://github.com/yejinms">@yejinms</a></th>
         <td width=150><a href="https://github.com/jaelyung">@jaelyung</a></th>
         <td width=150><a href="https://github.com/zyeongPark">@zyeongPark</a></th>
-        <td width=150>박진영</th>
+        <td width=150><a href="https://github.com/Claudia323">@Claudia323</th>
         <td width=150><a href="https://github.com/oceanooooo">@oceanooooo</a></th>
     </tr>
     </tr>
