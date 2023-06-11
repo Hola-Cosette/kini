@@ -9,14 +9,6 @@ import SwiftUI
 
 struct FeedBackView: View {
     
-    // Color Extension List
-    let colorLightGray = Color(red: 249/255, green: 249/255, blue: 249/255) // Star Score
-    let colorBorder = Color(red: 192/255, green: 192/255, blue: 192/255)    // NavigationBar Border
-    let colorTextGray = Color(red: 130/255, green: 130/255, blue: 130/255, opacity: 85/100)
-    let colorGray = Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 60/100)    // Nutrition Type Text
-    let colorBlur = Color(red: 47/255, green: 47/255, blue: 47/255, opacity: 30/100)
-    let colorShadow = Color(red: 153/255, green: 123/255, blue: 52/255, opacity: 40/100)    // Shadow Color
-    
     var selectedCharacter = "gardian_carrot"  // 선택한 캐릭터 이미지
     
     @State private var message: [String] = ["", "", "", "", ""]
@@ -43,7 +35,7 @@ struct FeedBackView: View {
             
             // MARK: NavigationBar
             Rectangle() // NavagationBar
-                .stroke(colorBorder, lineWidth: 1)
+                .stroke(Color.gray030, lineWidth: 1)
                 .background(.white)
                 .frame(width: .infinity, height: 103)
                 .padding(.bottom, 741)
@@ -52,7 +44,6 @@ struct FeedBackView: View {
                         Image(systemName: "chevron.left")    // Navigation BackButton
                             .frame(width: 15, height: 23)
                             .foregroundColor(Color.navy)
-//                                    .padding(EdgeInsets(top: 64, leading: 24, bottom: 757, trailing: 351))
                             .padding(.leading, 24)
                         
                         CharacterThumbnail(characterThumbnail: selectedCharacter, thumbnailWidth: 32, thumbnailHeight: 32)
@@ -60,12 +51,10 @@ struct FeedBackView: View {
                         
                         VStack(alignment: .leading) {    // CharacterName - CharacterMessage
                             Text("식사 친구 끼니")
-                                .foregroundColor(Color.navy)
-                                .font(.system(size: 16))
+                                .modifier(MSemiboldNavyTextModifier())
                             
                             Text("오늘도 건강하고 든든한 하루!")
-                                .foregroundColor(colorTextGray)
-                                .font(.system(size: 13))
+                                .modifier(XSRegularGrayTextModifier())
                         }   // ~VStack
                         .padding(.leading, 10)
 //                                .padding(.trailing, 139)  // 폰트 문제로 sketch 기준 수치 입력 시 text 짤림
@@ -148,7 +137,7 @@ struct FeedBackView: View {
             .padding(.top, 103) // NavigationBar 영역
             .padding(.top, 13)  // NavigationBar과의 padding
             
-            // MARK: NavigationButto
+            // MARK: NavigationButton
             // 버튼 '다음'
             Button(count == 5 ? "끼나와의 대화 마치기" : "다음"){
                 if count == 5 {
@@ -204,9 +193,8 @@ struct ChatLogKini: View {
     var body: some View {
         VStack {
             Text(message)
+                .modifier(XXSRegularNavyTextModifier())
                 .multilineTextAlignment(.leading)
-                .font(.system(size: 12))
-                .foregroundColor(Color.navy)
                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
                 .background(.white)
                 .cornerRadius(15)
@@ -261,9 +249,8 @@ struct ChatLogUser: View {
     var body: some View {
         VStack {
             Text(message)
+                .modifier(XXSRegularNavyTextModifier())
                 .multilineTextAlignment(.leading)
-                .font(.system(size: 12))
-                .foregroundColor(Color.navy)
                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
                 .background(Color.yellow030)
                 .cornerRadius(15)

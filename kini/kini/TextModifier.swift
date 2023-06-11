@@ -77,6 +77,15 @@ struct SRegularNavyTextModifier: ViewModifier {
     }
 }
 
+struct XSSemiboldNavyTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 13))
+            .fontWeight(.semibold)
+            .foregroundColor(Color.navy)
+    }
+}
+
 struct XSSemiboldBlackTextModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -118,7 +127,7 @@ struct XXSRegularGrayTextModifier: ViewModifier {
         content
             .font(.system(size: 12))
             .fontWeight(.regular)
-            .foregroundColor(Color(red: 0.235, green: 0.235, blue: 0.263)) //#3C3C43
+            .foregroundColor(Color.gray020)
             .opacity(0.61)
     }
 }

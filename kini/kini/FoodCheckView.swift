@@ -16,14 +16,6 @@ struct FoodCheckView: View {
     var mealTime: String = "아침" // !Sample!
     
     // Color Extension List
-    let colorBackground = Color(red: 255/255, green: 246/255, blue: 231/255)
-    let colorNavy = Color(red: 34/255, green: 49/255, blue: 116/255)    // Font, Frame Color
-    let colorLightGray = Color(red: 249/255, green: 249/255, blue: 249/255) // Star Score
-    let colorGray = Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 60/100)    // Nutrition Type Text
-    let colorBlur = Color(red: 47/255, green: 47/255, blue: 47/255, opacity: 30/100)
-    let colorShadow = Color(red: 153/255, green: 123/255, blue: 52/255, opacity: 40/100)    // Shadow Color
-    let colorPre = Color(red: 251/255, green: 227/255, blue: 170/255)
-    let colorPro = Color(red: 251/255, green: 192/255, blue: 54/255)
     
     // MARK: for ReportView
     var nutrition1: [String] = ["탄수화물", "단백질", "지방"]
@@ -34,40 +26,24 @@ struct FoodCheckView: View {
     
     var body: some View {
         ZStack {    // Navigation Button - (Photo - Menu)
-            colorBackground.ignoresSafeArea()
+            Color.yellow010.ignoresSafeArea()
             VStack {    // Navigation Button
                 HStack {    // 버튼 '다시 찍을래요' - 버튼 '점수를 알려주세요'
                     // 버튼 '다시 찍을래요'
-                    Button(action: {    // action
-
-                    }) {    // label
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: 170, height: 50)
-                            .foregroundColor(colorPre)
-                            .shadow(color: colorShadow,radius: 6, x: 0, y: 4)
-                            .overlay {
-                                Text("다시 찍을래요")
-                                    .foregroundColor(colorNavy)
-                                    .font(.system(size: 17, weight: .semibold))
-                            }
+                    Button ("다시 찍을래요") {
+                        
                     }
+                    .modifier(ShortButtonDisabledModifier())
+                    .shadow(color: Color.shadow,radius: 6, x: 0, y: 4)
 
                     Spacer().frame(width: 13)   // 버튼 사이 여백
 
                     // 버튼 '점수를 알려주세요'
-                    Button(action: {    // action    // Popup Button
-                        self.shouldShowPopup = true
-                    }) {    // label
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: 170, height: 50)
-                            .foregroundColor(colorPro)
-                            .shadow(color: colorShadow,radius: 6, x: 0, y: 4)
-                            .overlay {
-                                Text("점수를 알려주세요")
-                                    .foregroundColor(colorNavy)
-                                    .font(.system(size: 17, weight: .semibold))
-                            }
-                    }   // ~label
+                    Button ("점수를 알려주세요") {
+                        
+                    }
+                    .modifier(ShortLongButtonAbledModifier())
+                    .shadow(color: Color.shadow,radius: 6, x: 0, y: 4)
                 }   // ~HStack
                 .padding(.top, 748)
                 .padding(.bottom, 46)
@@ -77,15 +53,14 @@ struct FoodCheckView: View {
             
             VStack(spacing: 0) {    // Date - Photo - Menu
                 Text("\(todayDate)")  // date
-                    .font(.system(size: 22, weight: .bold))
-                    .foregroundColor(colorNavy)
+                    .modifier(XXLBoldNavyTextModifier())
                     .padding(.top, 62)
                 
                 // Photo
                 Circle()    // Phote Frame
                     .frame(width: 301, height: 301)
-                    .foregroundColor(colorNavy)
-                    .shadow(color: colorShadow, radius: 6, x: 0, y: 4)
+                    .foregroundColor(Color.navy)
+                    .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
                     .overlay {
                         Image(systemName: "circle.fill")    // Photo -> !test!
                             .resizable()
@@ -98,26 +73,27 @@ struct FoodCheckView: View {
                 Rectangle() // Background
                     .cornerRadius(15)
                     .foregroundColor(.white)
-                    .shadow(color: colorShadow, radius: 6, x: 0, y: 4)
+                    .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
                     .frame(width: 350, height: 270)
                     .overlay {  // Menu (Title - Line - List)
                         VStack(spacing: 0) {    // Menu // spacing: 0 -> 컴포넌트 간 기본 spacing = 0
                             Text("\(userName)의 오늘의 \(mealTime) 메뉴")  // Menu Title
-                                .font(.system(size: 28))
-                                .foregroundColor(colorNavy)
+                                .modifier(XXXLBoldNavyTextModifier())
+                                .padding(.top, 20)
                             
                             Rectangle() // line
                                 .frame(width: 300.82, height: 1)
-                                .foregroundColor(colorNavy)
+                                .foregroundColor(Color.navy)
                                 .padding(.top, 6.5)
                                 .padding(.bottom, 32.5)
                             
                             ForEach(0..<6) { menuIndex in   // Menu List
                                 Text("Menu \(menuIndex+1)")
-                                    .foregroundColor(colorNavy)
-                                    .font(.system(size: 15))
+                                    .modifier(SRegularNavyTextModifier())
                                     .padding(.top, 8)
                             }   // ~ForEach
+                            
+                            Spacer().frame(height: 27)
                         }   // ~VStack
                     }   // ~overlay(Menu)
                     .padding(.top, 24)
@@ -127,7 +103,7 @@ struct FoodCheckView: View {
             }   // ~VStack
             
             .popup(isPresented: $shouldShowPopup) {
-                colorBlur
+                Color.gray010
                     .blur(radius: 2)
                     .animation(.easeInOut)
                     .ignoresSafeArea()

@@ -14,14 +14,17 @@ struct HistoryView: View {
     let userName: String = "니코" // !Sample!
     var mealTime: String = "아침" // !Sample!
     
+    // Image Assets
+//    let star1: String = "star_01"
+//    let star2: String = "star_02"
+//    let star3: String = "star_03"
+//    let grape1: String = "grape_01"
+//    let grape2: String = "grape_02"
+//    let grape3: String = "grape_03"
+//    let grape4: String = "grape_04"
+    
     // Color Extension List
-    let colorBackground = Color(red: 255/255, green: 246/255, blue: 231/255)
-    let colorNavy = Color(red: 34/255, green: 49/255, blue: 116/255)    // Font, Frame Color
-    let colorLightGray = Color(red: 249/255, green: 249/255, blue: 249/255) // Star Score
-    let colorGray = Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 60/100)    // Nutrition Type Text
-    let colorShadow = Color(red: 153/255, green: 123/255, blue: 52/255, opacity: 40/100)    // Shadow Color
-    let colorPre = Color(red: 251/255, green: 227/255, blue: 170/255)
-    let colorPro = Color(red: 251/255, green: 192/255, blue: 54/255)
+    let colorLightGray = Color(red: 249/255, green: 249/255, blue: 249/255) // Star Background
     let nutritionColor: [Color] = [Color(red: 254/255, green: 226/255, blue: 125/255),
                                    Color(red: 237/255, green: 175/255, blue: 199/255),
                                    Color(red: 190/255, green: 210/255, blue: 125/255),
@@ -32,21 +35,22 @@ struct HistoryView: View {
     let time: [String] = ["아침", "점심", "저녁"]
     let nutritionType: [String] = ["곡류", "고기, 생선, 달걀, 콩류", "채소류",
                                    "과일류", "우유, 유제품류", "유지, 당류"]
+    let starGrade: [String] = ["star_01", "star_02", "star_03"]   // 아침 점심 저녁 별점  // !Sample!
+    let grapeGrade: [String] = ["grape_01", "grape_02", "grape_03", "grape_04"] // 포도 등급
     
     var body: some View {
         ZStack {
-            colorBackground.ignoresSafeArea()
+            Color.yellow010.ignoresSafeArea()
             
             Text("나의 끼니 기록")    // Navigation Title
-                .font(.system(size: 22, weight: .bold))
-                .foregroundColor(colorNavy)
+                .modifier(XXLBoldNavyTextModifier())
                 .padding(.top, 62)
                 .padding(.bottom, 754)
             
             Image(systemName: "chevron.left")    // Navigation BackButton
 //                .font(.system(size: 24)
                 .frame(width: 15, height: 23)
-                .foregroundColor(colorNavy)
+                .foregroundColor(Color.navy)
                 .padding(EdgeInsets(top: 64, leading: 24, bottom: 757, trailing: 351))
             
             VStack {
@@ -54,38 +58,37 @@ struct HistoryView: View {
                     Rectangle() // Background
                         .cornerRadius(15)
                         .foregroundColor(.white)
-                        .shadow(color: colorShadow, radius: 4, x: 0, y: 2)
+                        .shadow(color: Color.shadow, radius: 4, x: 0, y: 2)
                         .frame(width: 350, height: 254)
                         .padding(.top, 140)
                     
                     VStack(spacing: 0) {    // Date - Grade - Chart
                         Text(historyDate)  // Date
-                            .font(.system(size: 12))
-                            .foregroundColor(colorNavy)
+                            .modifier(XXSRegularNavyTextModifier())
                             .padding(.top, 50)
                         
                         Text("오늘의 영양점수")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundColor(colorNavy)
+                            .modifier(LSemiboldNavyTextModifier())
                             .padding(.top, 5)
                         
                         HStack {    // Grade
-                            ForEach(time, id: \.self) { time in
+                            ForEach (0..<3) { index in
                                 Rectangle()
                                     .cornerRadius(10)
                                     .frame(width: 106.07, height: 135)
                                     .foregroundColor(colorLightGray)
                                     .overlay {
                                         VStack(spacing: 0) {    // Grade Image - Time
-                                            Image(systemName: "star.square")   // Grade Image
+                                            // 별점 계산 결과 별 Image 다르게
+                                            
+                                            Image(starGrade[index])   // Grade Image
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 87, height: 84)
                                                 .padding(.top, 8)
                                             
-                                            Text(time)
-                                                .font(.system(size: 13, weight: .semibold))
-                                                .foregroundColor(colorNavy)
+                                            Text(time[index])
+                                                .modifier(XSSemiboldNavyTextModifier())
                                                 .padding(.top, 16)
                                                 .padding(.bottom, 9)
                                         }
@@ -101,18 +104,17 @@ struct HistoryView: View {
                     Rectangle() // Background
                         .cornerRadius(15)
                         .foregroundColor(.white)
-                        .shadow(color: colorShadow, radius: 4, x: 0, y: 2)
+                        .shadow(color: Color.shadow, radius: 4, x: 0, y: 2)
                         .frame(width: 350, height: 387)
                         .padding(.top, 17)
                     
                     VStack {
                         Text("오늘의 영양차트")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundColor(colorNavy)
+                            .modifier(LSemiboldNavyTextModifier())
                             .padding(.top, 15)
                         
                         Circle() // Chart
-                            .foregroundColor(colorNavy)
+                            .foregroundColor(Color.navy)
                             .frame(width: 254, height: 254)
                             .padding(.bottom, 14)
                         
@@ -124,8 +126,7 @@ struct HistoryView: View {
                                     .padding(.trailing, 4)
                                 
                                 Text(nutritionType[$0]) // Nutrition Type
-                                    .font(.system(size: 12))
-                                    .foregroundColor(colorGray)
+                                    .modifier(XXSRegularGrayTextModifier())
                                     .frame(minWidth: 32, alignment: .leading)
                                     .padding(.trailing, 8)
                             }
@@ -141,8 +142,7 @@ struct HistoryView: View {
                                     .padding(.trailing, 4)
                                 
                                 Text(nutritionType[$0]) // Nutrition Type
-                                    .font(.system(size: 12))
-                                    .foregroundColor(colorGray)
+                                    .modifier(XXSRegularGrayTextModifier())
                                     .frame(minWidth: 32, alignment: .leading)
                                     .padding(.trailing, 8)
                             }
@@ -159,10 +159,11 @@ struct HistoryView: View {
                 Image(systemName: "arrowtriangle.left.fill") // prev
                     .resizable()
                     .aspectRatio(CGSize(width: 0.75, height: 1), contentMode: .fit)
+                    .foregroundColor(Color.navy)
                     .frame(width: 20, height: 15)
                     .padding(.trailing, 60)
                 
-                Image(systemName: "face.smiling.inverse")    // Sticker
+                Image(grapeGrade[2])    // Sticker
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80)
@@ -171,6 +172,7 @@ struct HistoryView: View {
                 Image(systemName: "arrowtriangle.right.fill") // next
                     .resizable()
                     .aspectRatio(CGSize(width: 0.75, height: 1), contentMode: .fit)
+                    .foregroundColor(Color.navy)
                     .frame(width: 20, height: 15)
                     .padding(.leading, 60)
             }   // ~HStack
