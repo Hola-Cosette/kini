@@ -18,23 +18,19 @@ struct GuardianSelectionView: View {
     var body: some View {
         VStack(spacing:0) {
             HeaderView()
-                .padding(EdgeInsets(top:97, leading:20, bottom:0, trailing: 23))
+                .padding(EdgeInsets(top:97, leading:20, bottom:0, trailing: 20))
                 .ignoresSafeArea()
             GuardianGridView(characters: $characters, characters_disabled: $characters_disabled, characterSelected: $characterSelected)
-                .padding(EdgeInsets(top:29, leading:32, bottom:0, trailing: 32))
-            Button("나의 식사 시간에 함께해주세요"){
+                .padding(EdgeInsets(top:0, leading:20, bottom:0, trailing: 20))
+            Button("나의 식사시간을 함께 해주세요!"){
 
             }
             .disabled(characterSelected == nil)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .foregroundColor(.white)
-            .bold()
-            .padding()
-            .background(characterSelected != nil ? Color.blue : Color.gray)
-            .cornerRadius(15)
-            .frame(width: 343, height: 50)
+            .modifier(LongButtonIsSelectedModifier(isSelected: characterSelected != nil))
+            .padding(.bottom, 44)
 
         }
+        .background(Color.yellow010)
     }
 }
 
@@ -70,14 +66,20 @@ struct GuardianGridView: View {
     var body: some View {
         HStack {
             ScrollView {
-                LazyVGrid(columns: gridItemLayout, spacing:20) {
+                LazyVGrid(columns: gridItemLayout, spacing:10) {
                     ForEach(0..<characters.count) { character in
                         Button(action: {
                             self.characterSelected = character
                         }){
-                            Image(characters_disabled[character])
+                            if(self.characterSelected == character) {
+                                Image(characters[character])
+                            } else {
+                                Image(characters_disabled[character])
+                            }
+                            
                         }
-                        .modifier(Select2GridButtonDisabledModifier())
+                        .modifier(Select2GridButtonIsSelectedModifier(isSelected: self.characterSelected == character))
+                        
                     }
                 }
             }
