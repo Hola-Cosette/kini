@@ -11,9 +11,12 @@ struct CameraView: View {
     var body: some View {
         ZStack{
             Color.yellow010.edgesIgnoringSafeArea(.all)
-            Text("This is CameraView")
+            Button {
+                print("button clicked")
+            } label: {
+                Image("camera_button")
+            }
         }
-
     }
 }
 
