@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIWheelPicker
 
 struct CheckInView: View {
     @State var genders = ["gender_01", "gender_02"]
@@ -13,6 +14,7 @@ struct CheckInView: View {
     @State var genderSelected: Int?
     @State private var nickName: String = ""
     let background = Color.yellow010
+    
     
     var body: some View {
         ZStack {
@@ -36,7 +38,7 @@ struct CheckInView: View {
                     .padding(EdgeInsets(top:50, leading:20, bottom:0, trailing: 10))
                 //Number Picker
                 InputAgeView()
-                    .padding(EdgeInsets(top:39, leading:20, bottom:0, trailing: 10))
+                    .padding(EdgeInsets(top:39, leading:20, bottom:67, trailing: 10))
                 
                 Button("다 입력했어요!"){
 
@@ -136,22 +138,35 @@ struct InputAgeView: View {
     @State private var number: Int = 1
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
+    @State var indexScale: Int = 0
+    @State var items: [Int] = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    
     var body: some View {
         
         HStack {
             VStack(alignment: .leading, spacing: 0) {
                 Text("마지막으로, 나이를 알려주세요!")
                     .modifier(LSemiboldNavyTextModifier())
-                Carousel(cardWidth: 68, spacing: 10) {
-                    ForEach(8..<20) { number in
-                        CarouselCard {
-                            Text("\(number)")
-                                .font(.system(size:34))
-                                .bold()
-                        }
-                        .padding(.top, 10)
+                
+                SwiftUIWheelPicker($indexScale, items: $items) { value in
+                    GeometryReader { reader in
+                        Text("\(value)")
+                            .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
                     }
                 }
+                .scrollScale(0.6)
+                .frame(height: 68)
+                
+//                Carousel(cardWidth: 68, spacing: 10) {
+//                    ForEach(8..<20) { number in
+//                        CarouselCard {
+//                            Text("\(number)")
+//                                .font(.system(size:34))
+//                                .bold()
+//                        }
+//                        .padding(.top, 10)
+//                    }
+//                }
             }
             Spacer()
         }
@@ -274,3 +289,4 @@ struct Carousel_Previews: PreviewProvider {
         }
     }
 }
+
