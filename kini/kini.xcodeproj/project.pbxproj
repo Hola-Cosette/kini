@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0942A271EBA00AF6E8A /* kiniApp.swift */; };
-		7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0962A271EBA00AF6E8A /* ContentView.swift */; };
+		7D21D0972A271EBA00AF6E8A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0962A271EBA00AF6E8A /* MainView.swift */; };
 		7D21D0992A271EBB00AF6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D0982A271EBB00AF6E8A /* Assets.xcassets */; };
 		7D21D09C2A271EBB00AF6E8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D09B2A271EBB00AF6E8A /* Preview Assets.xcassets */; };
+		DEE757DB2A36DC8600733CD6 /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE757DA2A36DC8600733CD6 /* MainCardView.swift */; };
+		DEE757DD2A36DCBE00733CD6 /* MainAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE757DC2A36DCBE00733CD6 /* MainAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D21D0912A271EBA00AF6E8A /* kini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D21D0942A271EBA00AF6E8A /* kiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kiniApp.swift; sourceTree = "<group>"; };
-		7D21D0962A271EBA00AF6E8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7D21D0962A271EBA00AF6E8A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7D21D0982A271EBB00AF6E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D21D09B2A271EBB00AF6E8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DEE757DA2A36DC8600733CD6 /* MainCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
+		DEE757DC2A36DCBE00733CD6 /* MainAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				7D21D0942A271EBA00AF6E8A /* kiniApp.swift */,
-				7D21D0962A271EBA00AF6E8A /* ContentView.swift */,
+				7D21D0962A271EBA00AF6E8A /* MainView.swift */,
+				DEE757DC2A36DCBE00733CD6 /* MainAlertView.swift */,
+				DEE757DA2A36DC8600733CD6 /* MainCardView.swift */,
 				7D21D0982A271EBB00AF6E8A /* Assets.xcassets */,
 				7D21D09A2A271EBB00AF6E8A /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */,
+				7D21D0972A271EBA00AF6E8A /* MainView.swift in Sources */,
+				DEE757DB2A36DC8600733CD6 /* MainCardView.swift in Sources */,
+				DEE757DD2A36DCBE00733CD6 /* MainAlertView.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +203,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
