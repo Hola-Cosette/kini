@@ -135,7 +135,6 @@ struct InputAgeView: View {
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        
         HStack {
             VStack(alignment: .leading, spacing: 0) {
                 Text("마지막으로, 나이를 알려주세요")

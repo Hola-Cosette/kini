@@ -180,6 +180,7 @@ struct HistoryView: View {
             .padding(.bottom, 664)
         }   // ~ZStack
         .ignoresSafeArea()
+//        .navigationBarBackButtonHidden()
     }
 }
 

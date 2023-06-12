@@ -40,7 +40,7 @@ struct FoodCheckView: View {
 
                     // 버튼 '점수를 알려주세요'
                     Button ("점수를 알려주세요") {
-                        
+                        shouldShowPopup = true
                     }
                     .modifier(ShortLongButtonAbledModifier())
                     .shadow(color: Color.shadow,radius: 6, x: 0, y: 4)
