@@ -22,9 +22,11 @@ struct MainView: View {
                         .resizable()
                         .frame(width: 278,height:384)
                         .padding()
+                    
                     //MARK: - 오늘의 끼니점수
                     Text("오늘의 끼니 점수")
                         .modifier(LSemiboldNavyTextModifier())
+                    
                     //MARK: - 아점저 버튼 뷰
                     NavigationLink(destination: HistoryView()) {
                         MainCardView()
