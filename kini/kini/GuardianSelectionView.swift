@@ -34,11 +34,11 @@ struct GuardianSelectionView: View {
     }
 }
 
-struct GuardianSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        GuardianSelectionView()
-    }
-}
+//struct GuardianSelectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GuardianSelectionView()
+//    }
+//}
 
 struct HeaderView: View {
     @State private var isFlagged = false
@@ -63,6 +63,8 @@ struct GuardianGridView: View {
     @Binding var characterSelected: Int?
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
+    @AppStorage("guardian") private var guardian: Int?
+    
     var body: some View {
         HStack {
             ScrollView {
@@ -70,6 +72,7 @@ struct GuardianGridView: View {
                     ForEach(0..<characters.count) { character in
                         Button(action: {
                             self.characterSelected = character
+                            guardian = characterSelected
                         }){
                             if(self.characterSelected == character) {
                                 Image(characters[character])

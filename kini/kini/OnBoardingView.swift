@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    @State var characters = ["gardian_carrot", "gardian_broccoli", "gardian_eggplant", "gardian_paprika"]
     let background = Color.yellow010
+    @AppStorage("guardian") var selectedGuardian: Int!
     
     var body: some View {
         ZStack {
@@ -16,42 +18,33 @@ struct OnBoardingView: View {
             
             VStack(spacing: 0) {
                 
-                Button(action: {
-                    
-                }) {
-                    Image(systemName: "chevron.left")    // Navigation BackButton
-                        .foregroundColor(Color.navy)
-                        .frame(maxWidth: .infinity, maxHeight: 23, alignment: .leading)
-                        .padding(.leading, 19)
-                }
-                
                 //보호자 선택 뷰에서 선택된 캐릭터로 적용되도록 변경필요
-                Image("gardian_carrot")
+                Image(characters[selectedGuardian])
                     .resizable()
-                    .frame(width:225, height:343)
+                    .scaledToFit()
+                    .frame(height:343)
                 
                 Spacer()
                     .frame(height: 75)
                 
                 SpeechBlockView()
-                    
-                Button("저에 대해 알려줄게요!"){
-
+                NavigationLink(destination: CheckInView()){
+                    Text("저에 대해 알려줄게요!")
+                        .modifier(LongButtonAbledModifier())
+                        .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
+                        .padding(.top, 30)
                 }
-                .modifier(LongButtonAbledModifier())
-                .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
-                .padding(.top, 30)
             }
         }
         
     }
 }
 
-struct OnBoardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnBoardingView()
-    }
-}
+//struct OnBoardingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OnBoardingView()
+//    }
+//}
 
 struct SpeechBlockView: View {
     var body: some View {
