@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67AB382BAB466DFBF1E96797 /* Pods_kini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B39EB8859F4421E234B0C /* Pods_kini.framework */; };
 		7D0244D02A345F06008BD5CA /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */; };
 		7D0244D42A348B56008BD5CA /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0244D32A348B56008BD5CA /* TextModifier.swift */; };
 		7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0942A271EBA00AF6E8A /* kiniApp.swift */; };
@@ -16,6 +17,8 @@
 		7D8050302A2B3B94006B85D7 /* GuardianSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */; };
 		7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */; };
 		7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8050512A2D7A52006B85D7 /* CheckInView.swift */; };
+		7DA852902A3836D700E6C1A6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8528E2A3836D700E6C1A6 /* Model.xcdatamodeld */; };
+		7DA852922A38375F00E6C1A6 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA852912A38375F00E6C1A6 /* DataController.swift */; };
 		7DDA6D8A2A331A4A00DFCCB1 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DDA6D892A331A4A00DFCCB1 /* Color.xcassets */; };
 		7DDA6D8C2A336A3000DFCCB1 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */; };
 		8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */; };
@@ -36,12 +39,17 @@
 		7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianSelectionView.swift; sourceTree = "<group>"; };
 		7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		7D8050512A2D7A52006B85D7 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		7DA8528F2A3836D700E6C1A6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7DA852912A38375F00E6C1A6 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7DDA6D892A331A4A00DFCCB1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCheckView.swift; sourceTree = "<group>"; };
 		8ECBE7582A301A5B00BD2107 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		8ED5AC902A3339AC00714CD8 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		8EF007D62A3335FF007BA1B3 /* FeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackView.swift; sourceTree = "<group>"; };
+		B86B39EB8859F4421E234B0C /* Pods_kini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1805839C2A6D4C56DF4B281 /* Pods-kini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kini.debug.xcconfig"; path = "Target Support Files/Pods-kini/Pods-kini.debug.xcconfig"; sourceTree = "<group>"; };
+		D3409DDFF1943F54D12380C9 /* Pods-kini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kini.release.xcconfig"; path = "Target Support Files/Pods-kini/Pods-kini.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,17 +58,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECBE75C2A301A7E00BD2107 /* PopupView in Frameworks */,
+				67AB382BAB466DFBF1E96797 /* Pods_kini.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EF7D3673A464B0C5EFD603D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B86B39EB8859F4421E234B0C /* Pods_kini.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D21D0882A271EBA00AF6E8A = {
 			isa = PBXGroup;
 			children = (
 				7D21D0932A271EBA00AF6E8A /* kini */,
 				7D21D0922A271EBA00AF6E8A /* Products */,
+				EBFE0E944D66C2C9DAE70BB4 /* Pods */,
+				0EF7D3673A464B0C5EFD603D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,10 +94,10 @@
 		7D21D0932A271EBA00AF6E8A /* kini */ = {
 			isa = PBXGroup;
 			children = (
+				7D21D0942A271EBA00AF6E8A /* kiniApp.swift */,
 				7D80502F2A2B3B94006B85D7 /* GuardianSelectionView.swift */,
 				7D8050352A2BFC90006B85D7 /* OnBoardingView.swift */,
 				7D8050512A2D7A52006B85D7 /* CheckInView.swift */,
-				7D21D0942A271EBA00AF6E8A /* kiniApp.swift */,
 				7D21D0962A271EBA00AF6E8A /* ContentView.swift */,
 				8EF007D62A3335FF007BA1B3 /* FeedBackView.swift */,
 				7D21D0982A271EBB00AF6E8A /* Assets.xcassets */,
@@ -90,6 +109,8 @@
 				7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */,
 				7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */,
 				7D0244D32A348B56008BD5CA /* TextModifier.swift */,
+				7DA8528E2A3836D700E6C1A6 /* Model.xcdatamodeld */,
+				7DA852912A38375F00E6C1A6 /* DataController.swift */,
 			);
 			path = kini;
 			sourceTree = "<group>";
@@ -102,6 +123,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EBFE0E944D66C2C9DAE70BB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3409DDFF1943F54D12380C9 /* Pods-kini.release.xcconfig */,
+				D1805839C2A6D4C56DF4B281 /* Pods-kini.debug.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D21D09F2A271EBB00AF6E8A /* Build configuration list for PBXNativeTarget "kini" */;
 			buildPhases = (
+				19D32B92BD64452F08F99D03 /* [CP] Check Pods Manifest.lock */,
 				7D21D08D2A271EBA00AF6E8A /* Sources */,
 				7D21D08E2A271EBA00AF6E8A /* Frameworks */,
 				7D21D08F2A271EBA00AF6E8A /* Resources */,
+				C450E7A8730ABFE637BB64BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -174,6 +206,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19D32B92BD64452F08F99D03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kini-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C450E7A8730ABFE637BB64BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kini/Pods-kini-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kini/Pods-kini-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kini/Pods-kini-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D21D08D2A271EBA00AF6E8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -186,10 +260,12 @@
 				7D0244D02A345F06008BD5CA /* ButtonModifier.swift in Sources */,
 				7DDA6D8C2A336A3000DFCCB1 /* ColorExtension.swift in Sources */,
 				7D21D0972A271EBA00AF6E8A /* ContentView.swift in Sources */,
+				7DA852922A38375F00E6C1A6 /* DataController.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
 				8EF007D72A3335FF007BA1B3 /* FeedBackView.swift in Sources */,
 				8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */,
 				8ED5AC912A3339AC00714CD8 /* HistoryView.swift in Sources */,
+				7DA852902A3836D700E6C1A6 /* Model.xcdatamodeld in Sources */,
 				8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +389,7 @@
 		};
 		7D21D0A02A271EBB00AF6E8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1805839C2A6D4C56DF4B281 /* Pods-kini.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -346,6 +423,7 @@
 		};
 		7D21D0A12A271EBB00AF6E8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3409DDFF1943F54D12380C9 /* Pods-kini.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -418,6 +496,19 @@
 			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7DA8528E2A3836D700E6C1A6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7DA8528F2A3836D700E6C1A6 /* Model.xcdatamodel */,
+			);
+			currentVersion = 7DA8528F2A3836D700E6C1A6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7D21D0892A271EBA00AF6E8A /* Project object */;
 }
