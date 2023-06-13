@@ -4,8 +4,8 @@
 //
 //  Created by qwd on 2023/06/12.
 //
-
 import SwiftUI
+
 
 struct MainView: View {
     var body: some View {
@@ -18,10 +18,12 @@ struct MainView: View {
                         .modifier(LSemiboldNavyTextModifier())
                     
                     //MARK: - 포도송이 이미지
-                    Image("bunchOfGrapes")
-                        .resizable()
-                        .frame(width: 278,height:384)
-                        .padding()
+                    GrapeView()
+                        .frame(width: 270,height: 416)
+//                    Image("bunchOfGrapes")
+//                        .resizable()
+//                        .frame(width: 278,height:384)
+//                        .padding()
                     
                     //MARK: - 오늘의 끼니점수
                     Text("오늘의 끼니 점수")
@@ -32,13 +34,10 @@ struct MainView: View {
                         MainCardView()
                     }
                     .padding()
+                    
                     //MARK: - 오늘의 식사 기록하기 버튼
                     NavigationLink(destination: CameraView()) {
-                        Button(action: {
-                            print("button tapped")
-                        }, label: {
-                            Text("오늘의 식사 기록하기")
-                        })
+                        Text("오늘의 식사 기록하기")
                         .modifier(LongButtonAbledModifier())
                         .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
                     }
@@ -47,6 +46,8 @@ struct MainView: View {
         }
     }
 }
+
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
