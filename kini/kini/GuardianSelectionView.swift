@@ -15,22 +15,27 @@ struct GuardianSelectionView: View {
     @State var characters_disabled = ["gardian_carrot_disabled", "gardian_broccoli_disabled", "gardian_eggplant_disabled", "gardian_paprika_disabled"]
     @State var characterSelected: Int?
     
+    @AppStorage("guardian") private var guardian: Int?
+    
     var body: some View {
-        VStack(spacing:0) {
-            HeaderView()
-                .padding(EdgeInsets(top:97, leading:20, bottom:0, trailing: 20))
-                .ignoresSafeArea()
-            GuardianGridView(characters: $characters, characters_disabled: $characters_disabled, characterSelected: $characterSelected)
-                .padding(EdgeInsets(top:0, leading:20, bottom:0, trailing: 20))
-            Button("나의 식사시간을 함께 해주세요!"){
+        NavigationView{
+            VStack(spacing:0) {
+                HeaderView()
+                    .padding(EdgeInsets(top:97, leading:20, bottom:0, trailing: 20))
+                    .ignoresSafeArea()
+                GuardianGridView(characters: $characters, characters_disabled: $characters_disabled, characterSelected: $characterSelected)
+                    .padding(EdgeInsets(top:0, leading:20, bottom:0, trailing: 20))
+                NavigationLink(destination: OnBoardingView()){
+
+                    Text("나의 식사시간을 함께 해주세요!")
+                        .disabled(characterSelected == nil)
+                        .modifier(LongButtonIsSelectedModifier(isSelected: characterSelected != nil))
+                        .padding(.bottom, 44)
+                }
 
             }
-            .disabled(characterSelected == nil)
-            .modifier(LongButtonIsSelectedModifier(isSelected: characterSelected != nil))
-            .padding(.bottom, 44)
-
+            .background(Color.yellow010)
         }
-        .background(Color.yellow010)
     }
 }
 
