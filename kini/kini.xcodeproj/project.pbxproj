@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D0244D02A345F06008BD5CA /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */; };
 		7D0244D42A348B56008BD5CA /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0244D32A348B56008BD5CA /* TextModifier.swift */; };
+		7D0D9DC42A38CD0000309E08 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D9DC32A38CD0000309E08 /* Carousel.swift */; };
 		7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0942A271EBA00AF6E8A /* kiniApp.swift */; };
 		7D21D0972A271EBA00AF6E8A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21D0962A271EBA00AF6E8A /* MainView.swift */; };
 		7D21D0992A271EBB00AF6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D21D0982A271EBB00AF6E8A /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		7D0244D32A348B56008BD5CA /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
+		7D0D9DC32A38CD0000309E08 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		7D21D0912A271EBA00AF6E8A /* kini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D21D0942A271EBA00AF6E8A /* kiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kiniApp.swift; sourceTree = "<group>"; };
 		7D21D0962A271EBA00AF6E8A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */,
 				7D0244CF2A345F06008BD5CA /* ButtonModifier.swift */,
 				7D0244D32A348B56008BD5CA /* TextModifier.swift */,
+				7D0D9DC32A38CD0000309E08 /* Carousel.swift */,
 			);
 			path = kini;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				8ECBE7592A301A5B00BD2107 /* ReportView.swift in Sources */,
 				8ED5AC912A3339AC00714CD8 /* HistoryView.swift in Sources */,
 				DE0CF5562A38AEDB00C69757 /* GrapeView.swift in Sources */,
+				7D0D9DC42A38CD0000309E08 /* Carousel.swift in Sources */,
 				8EACCF6B2A2B6D4400BA679A /* FoodCheckView.swift in Sources */,
 				DEE757E12A37446800733CD6 /* CameraView.swift in Sources */,
 			);
