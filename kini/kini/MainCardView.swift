@@ -14,7 +14,7 @@ struct MainCardView: View {
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10){
-            ForEach(data, id: \.self){i in
+            ForEach(data, id: \.self) {i in
                 //ZStack으로 도형 추가
                 ZStack{
                     Rectangle()
@@ -24,6 +24,17 @@ struct MainCardView: View {
                     Text(i)
                         .modifier(XSSemiboldBlackTextModifier())
                         .offset(x:0,y:50)
+                    if i == "아침" {
+                        Image("star_01")
+                            .offset(x:0,y:-10)
+                    } else if i == "점심"{
+                        Image("star_02")
+                            .offset(x:0,y:-10)
+                    } else {
+                        Image("star_03")
+                            .offset(x:0,y:-10)
+                    }
+
                 }
             }
         }
