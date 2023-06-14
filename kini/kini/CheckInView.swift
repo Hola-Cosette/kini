@@ -21,6 +21,7 @@ struct CheckInView: View {
     @AppStorage("name") private var name = ""
     @AppStorage("gender") private var gender: Int?
     @AppStorage("age") private var age: Int?
+    @AppStorage("setting") private var setting: Bool = false
     
     var body: some View {
         ZStack {
@@ -47,6 +48,7 @@ struct CheckInView: View {
                     name = userInformation.nickName
                     gender = userInformation.gender
                     age = userInformation.age
+                    setting = true
                 })
             }
         }

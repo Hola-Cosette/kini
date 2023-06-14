@@ -15,8 +15,6 @@ struct GuardianSelectionView: View {
     @State var characters_disabled = ["gardian_carrot_disabled", "gardian_broccoli_disabled", "gardian_eggplant_disabled", "gardian_paprika_disabled"]
     @State var characterSelected: Int?
     
-    @AppStorage("guardian") private var guardian: Int?
-    
     var body: some View {
         NavigationView{
             VStack(spacing:0) {
