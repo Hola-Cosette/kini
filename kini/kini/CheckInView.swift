@@ -7,35 +7,47 @@
 
 import SwiftUI
 
+class UserInformation: ObservableObject {
+    @Published var nickName: String = ""
+    @Published var gender: Int = -1
+    @Published var age: Int = -1
+}
+
 struct CheckInView: View {
-    @State var genders = ["gender_01", "gender_02"]
-    @State var genders_disabled = ["gender_01_disabled", "gender_02_disabled"]
-    @State var genderSelected: Int?
-    @State private var nickName: String = ""
+    @State var userInformation: UserInformation
+    @State private var number: Int?
     let background = Color.yellow010
+    
+    @AppStorage("name") private var name = ""
+    @AppStorage("gender") private var gender: Int?
+    @AppStorage("age") private var age: Int?
     
     var body: some View {
         ZStack {
             background.ignoresSafeArea()
-            
             VStack(spacing: 0) {
                 
                 LargeTitleView()
                     .padding(EdgeInsets(top:16, leading:20, bottom:0, trailing: 20))
-                InputNickNameView(nickName: $nickName)
+                InputNickNameView(userInformation: $userInformation)
                     .padding(EdgeInsets(top:20, leading:20, bottom:0, trailing: 0))
-                InputGenderView(genders: $genders, genders_disabled: $genders_disabled, genderSelected: $genderSelected)
+                InputGenderView(userInformation: $userInformation)
                     .padding(EdgeInsets(top:50, leading:20, bottom:0, trailing: 10))
                 //Number Picker
                 InputAgeView()
                     .padding(EdgeInsets(top:39, leading:20, bottom:0, trailing: 10))
                 
-                Button("다 입력했어요!"){
-                    
+                NavigationLink(destination: OnBoardingView()){
+                    Text("다 입력했어요!")
+                        .disabled(userInformation.gender == -1 )
+                        .modifier(LongButtonIsSelectedModifier(isSelected: userInformation.gender != -1))
+                        .padding(.bottom, 46)
+                        .onTapGesture {
+                            name = userInformation.nickName
+                            gender = userInformation.gender
+                            age = userInformation.age
+                        }
                 }
-                .disabled(genderSelected == nil)
-                .modifier(LongButtonIsSelectedModifier(isSelected: genderSelected != nil))
-                .padding(.bottom, 46)
             }
         }
     }
@@ -43,7 +55,7 @@ struct CheckInView: View {
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckInView()
+        CheckInView(userInformation: UserInformation())
     }
 }
 
@@ -61,7 +73,7 @@ struct LargeTitleView: View {
 }
 
 struct InputNickNameView: View {
-    @Binding var nickName: String
+    @Binding var userInformation: UserInformation
 
     var body: some View {
 
@@ -74,7 +86,7 @@ struct InputNickNameView: View {
                         .foregroundColor(Color.white)
                         .frame(width: 350, height: 50)
                         .overlay(
-                            TextField("닉네임 입력", text: $nickName)
+                            TextField("닉네임 입력", text: $userInformation.nickName)
                                 .modifier(MRegularNavyTextModifier())
                         )
                         .padding(.top, 10)
@@ -85,9 +97,8 @@ struct InputNickNameView: View {
 }
 
 struct InputGenderView: View {
-    @Binding var genders: [String]
-    @Binding var genders_disabled: [String]
-    @Binding var genderSelected: Int?
+    @Binding var userInformation: UserInformation
+    @State var gender: Int = -1
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
 
     var body: some View {
@@ -98,19 +109,33 @@ struct InputGenderView: View {
                     .modifier(LSemiboldNavyTextModifier())
                 HStack (spacing: 0){
                     LazyVGrid(columns: gridItemLayout,alignment: .leading, spacing:0) {
-                        ForEach(0..<genders.count) { gender in
+                       
                             Button(action: {
-                                self.genderSelected = gender
+                                userInformation.gender = 0
+                                self.gender = userInformation.gender
                             }){
-                                if(self.genderSelected == gender) {
-                                    Image(genders[gender])
+                                if(gender == 0) {
+                                    Image("gender_01")
                                 } else {
-                                    Image(genders_disabled[gender])
+                                    Image("gender_01_disabled")
                                 }
                                 
                             }
-                            .modifier(Select2GridButtonIsSelectedModifier(isSelected: self.genderSelected == gender))
-                        }
+                            .modifier(Select2GridButtonIsSelectedModifier(isSelected: self.gender == 0))
+                            
+                            Button(action: {
+                                userInformation.gender = 1
+                                self.gender = userInformation.gender
+                            }){
+                                if(gender == 1) {
+                                    Image("gender_02")
+                                } else {
+                                    Image("gender_02_disabled")
+                                }
+                                
+                            }
+                            .modifier(Select2GridButtonIsSelectedModifier(isSelected: self.gender == 1))
+                        
                     }
                     .padding(.top, 10)
                 }
@@ -121,7 +146,6 @@ struct InputGenderView: View {
 }
 
 struct InputAgeView: View {
-    @State private var number: Int = 1
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {

@@ -28,7 +28,7 @@ struct OnBoardingView: View {
                     .frame(height: 75)
                 
                 SpeechBlockView()
-                NavigationLink(destination: CheckInView()){
+                NavigationLink(destination: CheckInView(userInformation: UserInformation())){
                     Text("저에 대해 알려줄게요!")
                         .modifier(LongButtonAbledModifier())
                         .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
