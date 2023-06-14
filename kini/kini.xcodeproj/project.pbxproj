@@ -30,6 +30,7 @@
 		DEE757DB2A36DC8600733CD6 /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE757DA2A36DC8600733CD6 /* MainCardView.swift */; };
 		DEE757DD2A36DCBE00733CD6 /* MainAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE757DC2A36DCBE00733CD6 /* MainAlertView.swift */; };
 		DEE757E12A37446800733CD6 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE757E02A37446800733CD6 /* CameraView.swift */; };
+		DEFDCCE72A3A10AF00D137AB /* NutritionChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFDCCE62A3A10AE00D137AB /* NutritionChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DEE757DA2A36DC8600733CD6 /* MainCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
 		DEE757DC2A36DCBE00733CD6 /* MainAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlertView.swift; sourceTree = "<group>"; };
 		DEE757E02A37446800733CD6 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		DEFDCCE62A3A10AE00D137AB /* NutritionChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				8EACCF6A2A2B6D4400BA679A /* FoodCheckView.swift */,
 				8ECBE7582A301A5B00BD2107 /* ReportView.swift */,
 				8ED5AC902A3339AC00714CD8 /* HistoryView.swift */,
+				DEFDCCE62A3A10AE00D137AB /* NutritionChartView.swift */,
 				7D21D09A2A271EBB00AF6E8A /* Preview Content */,
 				7DDA6D892A331A4A00DFCCB1 /* Color.xcassets */,
 				7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */,
@@ -209,6 +212,7 @@
 				7D8050362A2BFC90006B85D7 /* OnBoardingView.swift in Sources */,
 				7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */,
 				7D0244D02A345F06008BD5CA /* ButtonModifier.swift in Sources */,
+				DEFDCCE72A3A10AF00D137AB /* NutritionChartView.swift in Sources */,
 				7DDA6D8C2A336A3000DFCCB1 /* ColorExtension.swift in Sources */,
 				7D21D0972A271EBA00AF6E8A /* MainView.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
