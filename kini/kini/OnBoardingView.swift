@@ -23,9 +23,7 @@ struct OnBoardingView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height:343)
-                
-                Spacer()
-                    .frame(height: 75)
+                    .padding(.bottom, 30)
                 
                 SpeechBlockView()
                 NavigationLink(destination: CheckInView(userInformation: UserInformation())){

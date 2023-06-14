@@ -10,12 +10,12 @@ import SwiftUI
 class UserInformation: ObservableObject {
     @Published var nickName: String = ""
     @Published var gender: Int = -1
-    @Published var age: Int = -1
+    @Published var age: Int = 13
 }
 
 struct CheckInView: View {
     @State var userInformation: UserInformation
-    @State private var number: Int?
+    
     let background = Color.yellow010
     
     @AppStorage("name") private var name = ""
@@ -39,18 +39,20 @@ struct CheckInView: View {
                 
                 NavigationLink(destination: OnBoardingView()){
                     Text("다 입력했어요!")
-                        .disabled(userInformation.gender == -1 )
-                        .modifier(LongButtonIsSelectedModifier(isSelected: userInformation.gender != -1))
+                    .modifier(LongButtonIsSelectedModifier(isSelected: true))
                         .padding(.bottom, 46)
-                        .onTapGesture {
-                            name = userInformation.nickName
-                            gender = userInformation.gender
-                            age = userInformation.age
-                        }
+                            
                 }
+                .simultaneousGesture(TapGesture().onEnded{
+                    name = userInformation.nickName
+                    gender = userInformation.gender
+                    age = userInformation.age
+                })
             }
         }
     }
+    
+    
 }
 
 struct CheckInView_Previews: PreviewProvider {
@@ -74,7 +76,7 @@ struct LargeTitleView: View {
 
 struct InputNickNameView: View {
     @Binding var userInformation: UserInformation
-
+    
     var body: some View {
 
         HStack {
@@ -87,6 +89,7 @@ struct InputNickNameView: View {
                         .frame(width: 350, height: 50)
                         .overlay(
                             TextField("닉네임 입력", text: $userInformation.nickName)
+                                .padding(.leading, 18)
                                 .modifier(MRegularNavyTextModifier())
                         )
                         .padding(.top, 10)
