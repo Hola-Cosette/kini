@@ -18,4 +18,13 @@ extension Color {
     static let gray010 = Color("gray010")   // PopupView Background Blur
     static let gray020 = Color("gray020")   // HistoryView -> Nutrition Type Text -> TextModifier.XXSRegularGrayTextModifier
     static let gray030 = Color("gray030")   // border
+    
+    //MARK: - NutritionChartView Colors
+    static let cereal = Color("cereal")
+    static let dairy = Color("dairy")
+    static let fruit = Color("fruit")
+    static let meat = Color("meat")
+    static let vegetable = Color("vegetable")
+    static let sugar = Color("sugar")
+    
 }

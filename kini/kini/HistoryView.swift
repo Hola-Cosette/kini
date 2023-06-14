@@ -115,11 +115,14 @@ struct HistoryView: View {
                         Text("오늘의 영양차트")
                             .modifier(LSemiboldNavyTextModifier())
                             .padding(.top, 15)
-                        
-                        Circle() // Chart
-                            .foregroundColor(Color.navy)
-                            .frame(width: 254, height: 254)
-                            .padding(.bottom, 14)
+                        ZStack{
+                            Circle() // Chart
+                                .foregroundColor(Color.navy)
+                                .frame(width: 255, height: 255)
+                                .padding(.bottom, 14)
+                            NutritionChartView()
+                                .offset(x:0,y:55)
+                        }
                         
                         HStack(spacing: 0) {    // Nutrition Item 1/2 (Color - Type)
                             ForEach(0..<2) {
