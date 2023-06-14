@@ -96,13 +96,12 @@ struct CarouselCard<Content: View>: View {
     var body: some View {
         content
             .frame(width: config.cardWidth, height: config.cardWidth)
-            .scaleEffect(isActive ? 1 : 0.8)
+            .scaleEffect(isActive ? 1.4 : 1)
             .foregroundColor(isActive ? Color(red: 34/255, green: 49/255, blue: 116/255) : Color(red: 152/255, green: 157/255, blue: 180/255))
-            .background(isActive ? Color(red: 251/255, green: 192/255, blue: 54/255) : Color.blue)
+            .background(isActive ? Color(red: 251/255, green: 192/255, blue: 54/255) : Color.clear)
             .cornerRadius(8)
             .shadow(color: isActive ? Color.shadow : Color.clear, radius: 6, x: 0, y: 4)
             .animation(.easeInOut, value: isActive)
-//            .zIndex(isActive ? 1 : 0)
             .onAppear {
                 self.cardId = self.config.cardCount
                 self.config.cardCount += 1
