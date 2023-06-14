@@ -71,11 +71,21 @@ class Util {
             dataPath = documentsUrl
         }
         
-        do {
-            // 디렉토리 삭제
-            try FileManager.default.removeItem(atPath: dataPath.path)
-        } catch {
-            print("Could not clear temp folder: \(error)")
+//        do {
+//            // 디렉토리 삭제
+//            try FileManager.default.removeItem(atPath: dataPath.path)
+//        } catch {
+//            print("Could not clear temp folder: \(error)")
+//        }
+        if FileManager.default.fileExists(atPath: dataPath.path) {
+            // 디렉토리가 존재하는 경우에만 삭제 시도
+            do {
+                try FileManager.default.removeItem(atPath: dataPath.path)
+            } catch {
+                print("Could not clear temp folder: \(error)")
+            }
+        } else {
+            print("no folder")
         }
     }
 }

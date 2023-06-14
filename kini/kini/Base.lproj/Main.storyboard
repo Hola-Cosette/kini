@@ -26,6 +26,9 @@
                                         <state key="normal" title="Start CameraUI Service">
                                             <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startCameraUIService:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qjK-zJ-4HQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziq-zT-1F5">
                                         <rect key="frame" x="0.0" y="58.666666666666657" width="393" height="38.333333333333343"/>
@@ -34,6 +37,9 @@
                                         <state key="normal" title="Start SearchUI Service">
                                             <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startSearchUIService:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cYN-c8-D2j"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYG-1a-Lpd">
                                         <rect key="frame" x="0.0" y="117.00000000000001" width="393" height="38.666666666666671"/>
@@ -42,6 +48,9 @@
                                         <state key="normal" title="Start GalleryUI Service">
                                             <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startGalleryUIService:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mwG-Xl-dGM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9P-vY-l9p">
                                         <rect key="frame" x="0.0" y="175.66666666666666" width="393" height="38.333333333333343"/>
@@ -71,7 +80,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="80" id="Rbx-xn-Y6g" customClass="TableViewCell" customModule="FoodLensTestApp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="80" id="Rbx-xn-Y6g" customClass="TableViewCell" customModule="kini" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rbx-xn-Y6g" id="osR-mQ-nrP">
@@ -139,6 +148,9 @@
                             <constraint firstItem="cjz-et-XeP" firstAttribute="top" secondItem="kJc-N9-w8q" secondAttribute="bottom" id="udz-mh-wxI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="jnn-yW-cZZ" id="AbB-0z-iTU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

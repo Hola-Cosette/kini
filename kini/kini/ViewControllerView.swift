@@ -17,49 +17,16 @@ import UIKit
 import FoodLens
 import SwiftUI
 
-//struct ViewControllers: UIViewControllerRepresentable {
-////    let viewController = ViewController()
-//    func makeUIViewController(context: Context) -> ViewController {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateInitialViewController()
-//        return viewController as! ViewController
-//    }
-//
-//    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
-//
-//    }
-//}
-//struct ViewControllerView: View {
-//    @State private var isPresentingStoryboard = false
-//    var body: some View {
-//        VStack {
-////            Image(systemName: "face.smiling")
-//////                .sheet(isPresented: $isPresentingStoryboard) {
-//////                    // Main Storyboard로 이동
-//////                ViewControllers()
-//////                }
-////                .onTapGesture {
-////
-////                }
-//            NavigationLink(destination: ViewControllers()) {
-//                Image(systemName: "face.smiling")
-//            }
-//            var vc = ViewControllers()
-////            vc.makeUIViewController(context: self.context)
-//        }
-//    }
-//}
 struct ViewControllerView: UIViewControllerRepresentable {
     typealias UIViewControllerType = ViewController
     
     func makeUIViewController(context: Context) -> ViewController {
             // Return MyViewController instance
-//        var vc = ViewController()
-////        vc.startCameraUIService((Any).self)
-//        print("makeUIViewController")
-//        return vc
         UIStoryboard(name: "Main", bundle: nil)
                     .instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+//        UIStoryboard(name: "Main", bundle: Bundle(identifier: "org.cocoapods.FoodLens"))
+//            .instantiateViewController(withIdentifier: "CameraViewController") as! ViewController
     }
     
     func updateUIViewController(_ uiViewController: ViewController, context: Context) {
@@ -73,13 +40,6 @@ struct ShowViewController: View {
     @State var isPresented = false
         
         var body: some View {
-//            Button("ViewController") {
-//                isPresented = true
-//            }
-//            .sheet(isPresented: $isPresented) {
-//                ViewControllerView()
-//
-//            }
             ViewControllerView()
         }
 }
@@ -211,17 +171,17 @@ class ViewController: UIViewController, UserServiceResultHandler, UIImagePickerC
     @IBAction func startCameraUIService(_ sender: Any) {
 //        statusLabel?.text = ""
         Util.deleteDirectory(path : "foodlensStore")
-//        uiService?.startCameraUIService(parent: self, completionHandler: self)
+        uiService?.startCameraUIService(parent: self, completionHandler: self)
     }
     
     // 검색 UI 서비스 시작 버튼이 눌렸을 때 호출되는 메서드
     @IBAction func startSearchUIService(_ sender: Any) {
-//        uiService?.startSearchUIService(parent: self, completionHandler: self)
+        uiService?.startSearchUIService(parent: self, completionHandler: self)
     }
     
     // 갤러리 UI 서비스 시작 버튼이 눌렸을 때 호출되는 메서드
     @IBAction func startGalleryUIService(_ sender: Any) {
-//        uiService?.startGalleryUIService(parent: self, completionHandler: self)
+        uiService?.startGalleryUIService(parent: self, completionHandler: self)
     }
     
     // 이미지 저장 및 파일 경로 반환하는 메서드
