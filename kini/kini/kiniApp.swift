@@ -13,7 +13,7 @@ struct kiniApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            GuardianSelectionView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
