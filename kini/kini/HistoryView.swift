@@ -14,6 +14,9 @@ struct HistoryView: View {
     let userName: String = "니코" // !Sample!
     var mealTime: String = "아침" // !Sample!
     
+    // MARK: - navigationView Back Button custom
+    @Environment(\.presentationMode) private var presentationMode : Binding <PresentationMode>
+    
     // Image Assets
 //    let star1: String = "star_01"
 //    let star2: String = "star_02"
@@ -44,14 +47,14 @@ struct HistoryView: View {
             
             Text("나의 끼니 기록")    // Navigation Title
                 .modifier(XXLBoldNavyTextModifier())
-                .padding(.top, 62)
-                .padding(.bottom, 754)
-            
-            Image(systemName: "chevron.left")    // Navigation BackButton
-//                .font(.system(size: 24)
-                .frame(width: 15, height: 23)
-                .foregroundColor(Color.navy)
-                .padding(EdgeInsets(top: 64, leading: 24, bottom: 757, trailing: 351))
+                .padding(EdgeInsets(top: 62, leading: 0, bottom: 754, trailing: 0))
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: Button(action : {
+                    self.presentationMode.wrappedValue.dismiss()
+                }){
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(Color.navy)
+                })
             
             VStack {
                 ZStack {    // Nutrition Score
