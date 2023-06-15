@@ -22,8 +22,7 @@
 
 <h2>📱 Preview</h1>
 
-something here
-
+<img width="1040" alt="preview" src="https://github.com/Hola-Cosette/kini/assets/61307199/df1e9de4-7eb3-4645-9a7b-905ea091e6dd">
 <br>
 <br>
 <br>
