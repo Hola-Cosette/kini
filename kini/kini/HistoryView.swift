@@ -38,7 +38,7 @@ struct HistoryView: View {
     let time: [String] = ["아침", "점심", "저녁"]
     let nutritionType: [String] = ["곡류", "고기, 생선, 달걀, 콩류", "채소류",
                                    "과일류", "우유, 유제품류", "유지, 당류"]
-    let starGrade: [String] = ["star_01", "star_02", "star_03"]   // 아침 점심 저녁 별점  // !Sample!
+    let starGrade: [String] = ["star_01", "star_03", "star_02"]   // 아침 점심 저녁 별점  // !Sample!
     let grapeGrade: [String] = ["grape_01", "grape_02", "grape_03", "grape_04"] // 포도 등급
     
     var body: some View {
@@ -81,19 +81,15 @@ struct HistoryView: View {
                                     .frame(width: 106.07, height: 135)
                                     .foregroundColor(colorLightGray)
                                     .overlay {
-                                        VStack(spacing: 0) {    // Grade Image - Time
+                                        ZStack{    // Grade Image - Time
                                             // 별점 계산 결과 별 Image 다르게
                                             
                                             Image(starGrade[index])   // Grade Image
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 87, height: 84)
-                                                .padding(.top, 8)
-                                            
+                                                .offset(x:0,y:-20)
                                             Text(time[index])
                                                 .modifier(XSSemiboldNavyTextModifier())
-                                                .padding(.top, 16)
-                                                .padding(.bottom, 9)
+                                                .offset(x:0,y:50)
+//
                                         }
                                     }
                             }   // ~ForEach
