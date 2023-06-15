@@ -36,7 +36,7 @@ struct MainView: View {
                     .padding()
                     
                     //MARK: - 오늘의 식사 기록하기 버튼
-                    NavigationLink(destination: CameraView()) {
+                    NavigationLink(destination: ViewControllerView()) {
                         Text("오늘의 식사 기록하기")
                         .modifier(LongButtonAbledModifier())
                         .shadow(color: Color.shadow, radius: 6, x: 0, y: 4)
