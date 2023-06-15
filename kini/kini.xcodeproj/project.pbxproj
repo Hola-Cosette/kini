@@ -21,6 +21,7 @@
 		7D8050522A2D7A52006B85D7 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8050512A2D7A52006B85D7 /* CheckInView.swift */; };
 		7DDA6D8A2A331A4A00DFCCB1 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DDA6D892A331A4A00DFCCB1 /* Color.xcassets */; };
 		7DDA6D8C2A336A3000DFCCB1 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */; };
+		7DF3F0652A3B680500E49C20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3F0642A3B680500E49C20 /* ContentView.swift */; };
 		8E1861822A3A3B3B000A6CE2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1861812A3A3B3B000A6CE2 /* Util.swift */; };
 		8E1861842A3A3B87000A6CE2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1861832A3A3B87000A6CE2 /* TableViewCell.swift */; };
 		8E1861862A3A3BBA000A6CE2 /* ViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1861852A3A3BBA000A6CE2 /* ViewControllerView.swift */; };
@@ -55,6 +56,7 @@
 		7D8050512A2D7A52006B85D7 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		7DDA6D892A331A4A00DFCCB1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		7DDA6D8B2A336A3000DFCCB1 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		7DF3F0642A3B680500E49C20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8E1861812A3A3B3B000A6CE2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Util.swift; path = /Users/ocean/kini2/kini/kini/Util.swift; sourceTree = "<absolute>"; };
 		8E1861832A3A3B87000A6CE2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8E1861852A3A3BBA000A6CE2 /* ViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				7D0D9DC32A38CD0000309E08 /* Carousel.swift */,
 				7D0D9DC82A38D15900309E08 /* Model.xcdatamodeld */,
 				7D0D9DCB2A38D1D900309E08 /* DataController.swift */,
+				7DF3F0642A3B680500E49C20 /* ContentView.swift */,
 				8E1861852A3A3BBA000A6CE2 /* ViewControllerView.swift */,
 				8E1861872A3A3BDA000A6CE2 /* Main.storyboard */,
 			);
@@ -297,6 +300,7 @@
 				7DDA6D8C2A336A3000DFCCB1 /* ColorExtension.swift in Sources */,
 				8E1861822A3A3B3B000A6CE2 /* Util.swift in Sources */,
 				7D21D0972A271EBA00AF6E8A /* MainView.swift in Sources */,
+				7DF3F0652A3B680500E49C20 /* ContentView.swift in Sources */,
 				8E1861862A3A3BBA000A6CE2 /* ViewControllerView.swift in Sources */,
 				7D21D0952A271EBA00AF6E8A /* kiniApp.swift in Sources */,
 				8EF007D72A3335FF007BA1B3 /* FeedBackView.swift in Sources */,
