@@ -82,7 +82,7 @@ struct SpeechBlockView: View {
                                .lineSpacing(6.0)
                                .padding(EdgeInsets(top:0, leading:19, bottom:0, trailing: 20))
                        } else {
-                           Text("정말 반가워, \(name ?? "")! 오늘도 나와 함께 든든한 하루를 보낼 준비가 되었니?")
+                           Text("정말 반가워, \(name ?? "친구")! 오늘도 나와 함께 든든한 하루를 보낼 준비가 되었니?")
                                .modifier(MRegularNavyTextModifier())
                                .lineSpacing(6.0)
                                .padding(EdgeInsets(top:0, leading:19, bottom:0, trailing: 20))
