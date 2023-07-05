@@ -28,11 +28,9 @@ struct MainCardView: View {
                         Image("star_01")
                             .offset(x:0,y:-10)
                     } else if i == "점심"{
-                        Image("star_02")
-                            .offset(x:0,y:-10)
-                    } else {
                         Image("star_03")
-                            .offset(x:0,y:-10)
+                        .offset(x:0,y:-10)
+                        
                     }
 
                 }

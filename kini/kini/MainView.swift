@@ -20,7 +20,7 @@ struct MainView: View {
                     //MARK: - 포도송이 이미지
                     GrapeView()
                         .frame(width: 270,height: 416)
-//                    Image("bunchOfGrapes")
+//                    Image("bunchOfGrapes")ㄴ
 //                        .resizable()
 //                        .frame(width: 278,height:384)
 //                        .padding()
